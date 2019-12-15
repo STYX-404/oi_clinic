@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        #--------form--------------
+        <record id="employees_form" model="ir.ui.view">
+            <field name="name">employees.form</field>
+            <field name="model">employees.data</field>
+            <field name="arch" type="xml">
+                <form string="employees and professors">
+                    <sheet>
+
+                        <group col="2" colspan="2" string="Employee information">
+                            <field name="e_image" widget="image" class="oe_avatar oe_left"/>
+                            <field name="e_name"/>
+                            <field name="e_job"/>
+                            <field name="e_phone"/>
+                            <field name="e_email"/>
+                            <field name="e_code"/>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        #-----------search--------
+
+        <record id="employees_search" model="ir.ui.view">
+           <field name="name">employees.search</field>
+           <field name="model">employees.data</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="e_name"/>
+                    <field name="e_code"/>
+                    <field name="e_phone"/>
+                    <field name="e_email"/>
+            </search>
+           </field>
+        </record>
+
+        #--------tree---------------
+        <record id="employee_tree" model="ir.ui.view">
+            <field name="name">employee.tree</field>
+            <field name="model">employees.data</field>
+            <field name="arch" type="xml">
+                <tree string="Employees">
+                    <field name="e_name"/>
+                    <field name="e_job"/>
+                    <field name="e_email"/>
+                    <field name="e_phone"/>
+                    <field name="e_code"/>
+                </tree>
+            </field>
+        </record>
+
+        #--------kanban--------------
+
+        <record id="employee_kanban" model="ir.ui.view">
+         <field name="name">employee.kanban</field>
+          <field name="model">employees.data</field>
+         <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="e_name"/>
+                <field name="e_job"/>
+                <field name="e_phone"/>
+                <field name="e_email"/>
+         <templates>
+             <t t-name="kanban-box">
+                <div t-attf-class="oe_module_vignette oe_kanban_global_click">
+                    <div class="o_kanban_image">
+                        <img type="title" alt="Avatar" t-att-src="kanban_image('employees.data', 'e_image', record.id.raw_value)"/>
+                    </div>
+                    <div class="oe_kanban_details">
+                    <ul>
+                        <li><strong> <field name="e_name"/> </strong></li>
+                        <li class="text-success"> <field name="e_job"/> </li>
+                        <li> <field name="e_phone" widget="phone"/> </li>
+                        <li> <strong><field name="e_email" widget="email"/></strong> </li>
+                    </ul>
+                </div>
+            </div>
+         </t>
+         </templates>
+         </kanban>
+         </field>
+        </record>
+
+        #--------action--------------
+
+        <record id="employees_view_action" model="ir.actions.act_window">
+            <field name="name">Employees</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">employees.data</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        #--------menu item----------
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="employees_data_categ" name="Employees" parent="oi_clinic_root" action="employees_view_action" sequence="2"/>
+
+    </data>
+</odoo>
+
+
