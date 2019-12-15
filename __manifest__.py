@@ -31,7 +31,7 @@
         'views/employees_view.xml',
         'sequences/employees_code.xml',
         'views/docs_and_nurses_views.xml',
-        'views/docsAndNurses_code.xml',
+        'sequences/docsAndNurses_code.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

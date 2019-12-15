@@ -2,19 +2,19 @@
 <odoo>
     <data>
         #--------form--------------
-        <record id="docsAndNurses_form" model="ir.ui.view">
-            <field name="name">docsAndNurses_form</field>
-            <field name="model">docsAndNurses.data</field>
+        <record id="doctors_form" model="ir.ui.view">
+            <field name="name">doctors.form</field>
+            <field name="model">doctors.data</field>
             <field name="arch" type="xml">
                 <form string="Doctors and nurses">
                     <sheet>
 
-                        <group col="2" colspan="2" string="docs and nurses information">
-                            <field name="docsAndNurses_image" widget="image" class="oe_avatar oe_left"/>
-                            <field name="docsAndNurses_name"/>
-                            <field name="docsAndNurses_job"/>
-                            <field name="docsAndNurses_phone"/>
-                            <field name="docsAndNurses_code"/>
+                        <group col="2" colspan="2" string="doctors and nurses information">
+                            <field name="doctors_image" widget="image" class="oe_avatar oe_left"/>
+                            <field name="doctors_name"/>
+                            <field name="doctors_job"/>
+                            <field name="doctors_phone"/>
+                            <field name="doctors_code"/>
                         </group>
 
                     </sheet>
@@ -25,55 +25,55 @@
 
         #-----------search--------
 
-        <record id="docsAndNurses_search" model="ir.ui.view">
-           <field name="name">docsAndNurses.search</field>
-           <field name="model">docsAndNurses.data</field>
+        <record id="doctors_search" model="ir.ui.view">
+           <field name="name">doctors.search</field>
+           <field name="model">doctors.data</field>
             <field name="arch" type="xml">
                 <search string="Search">
-                    <field name="docsAndNurses_name"/>
-                    <field name="docsAndNurses_code"/>
-                    <field name="docsAndNurses_phone"/>
-                    <field name="docsAndNurses_job"/>
+                    <field name="doctors_name"/>
+                    <field name="doctors_code"/>
+                    <field name="doctors_phone"/>
+                    <field name="doctors_job"/>
             </search>
            </field>
         </record>
 
         #--------tree---------------
-        <record id="docsAndNurses_tree" model="ir.ui.view">
-            <field name="name">docsAndNurses.tree</field>
-            <field name="model">docsAndNurses.data</field>
+        <record id="doctors_tree" model="ir.ui.view">
+            <field name="name">doctors.tree</field>
+            <field name="model">doctors.data</field>
             <field name="arch" type="xml">
                 <tree string="docs and nurses">
-                    <field name="docsAndNurses_name"/>
-                    <field name="docsAndNurses_job"/>
-                    <field name="docsAndNurses_phone"/>
-                    <field name="docsAndNurses_code"/>
+                    <field name="doctors_name"/>
+                    <field name="doctors_job"/>
+                    <field name="doctors_phone"/>
+                    <field name="doctors_code"/>
                 </tree>
             </field>
-        </record>Employee
+        </record>
 
         #--------kanban--------------
 
-        <record id="docsAndNurses_kanban" model="ir.ui.view">
-         <field name="name">docsAndNurses.kanban</field>
-          <field name="model">docsAndNurses.data</field>
+        <record id="doctors_kanban" model="ir.ui.view">
+         <field name="name">doctors.kanban</field>
+          <field name="model">doctors.data</field>
          <field name="arch" type="xml">
             <kanban>
                 <field name="id"/>
-                <field name="docsAndNurses_name"/>
-                <field name="docsAndNurses_job"/>
-                <field name="docsAndNurses_phone"/>
+                <field name="doctors_name"/>
+                <field name="doctors_job"/>
+                <field name="doctors_phone"/>
          <templates>
              <t t-name="kanban-box">
                 <div t-attf-class="oe_module_vignette oe_kanban_global_click">
                     <div class="o_kanban_image">
-                        <img type="title" alt="Avatar" t-att-src="kanban_image('docsAndNurses.data', 'e_image', record.id.raw_value)"/>
+                        <img type="title" alt="Avatar" t-att-src="kanban_image('doctors.data', 'doctors_image', record.id.raw_value)"/>
                     </div>
                     <div class="oe_kanban_details">
                     <ul>
-                        <li><strong> <field name="docsAndNurses_name"/> </strong></li>
-                        <li class="text-success"> <field name="docsAndNurses_job"/> </li>
-                        <li> <field name="docsAndNurses_phone" widget="phone"/> </li>
+                        <li><strong> <field name="doctors_name"/> </strong></li>
+                        <li class="text-success"> <field name="doctors_job"/> </li>
+                        <li> <field name="doctors_phone" widget="phone"/> </li>
                     </ul>
                 </div>
             </div>
@@ -85,16 +85,16 @@
 
         #--------action--------------
 
-        <record id="employees_view_action" model="ir.actions.act_window">
-            <field name="name">docs and nurses</field>
+        <record id="doctors_view_action" model="ir.actions.act_window">
+            <field name="name">doctors and nurses</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">docsAndNurses.data</field>
-            <field name="view_mode">tree,kanban,form</field>
+            <field name="res_model">doctors.data</field>
+            <field name="view_mode">kanban,tree,form</field>
         </record>
 
         #--------menu item----------
 
-        <menuitem id="docsAndNurses_data_categ" name="docs and nurses" parent="oi_clinic_root" action="docsAndNurses_view_action" sequence="2"/>
+        <menuitem id="doctors_data_categ" name="Doctors and Nurses" parent="oi_clinic_root" action="doctors_view_action" sequence="3"/>
 
     </data>
 </odoo>

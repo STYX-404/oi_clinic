@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_students_data,students.data,model_students_data,,1,1,1,1
 access_employees_data,employees.data,model_employees_data,,1,1,1,1
+access_doctors_data,doctors.data,model_doctors_data,,1,1,1,1
