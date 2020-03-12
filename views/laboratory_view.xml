@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         #--------form--------------
+
+        <record id="laboratory_form" model="ir.ui.view">
+            <field name="name">laboratory.form</field>
+            <field name="model">lab.reports</field>
+            <field name="arch" type="xml">
+                <form string="Laboratory Form">
+                    <sheet>
+                        <group string="Student Information">
+                            <field name="st_ids"/>
+                        </group>
+                        <group col="6" string="Result of blood testing">
+                            <field name="he_test_name"/>
+                            <field name="he_value"/>
+                            <field name="he_normal_value"/>
+                            <field name="cl_test_name"/>
+                            <field name="cl_value"/>
+                            <field name="cl_normal_value"/>
+                            <field name="pt_test_name"/>
+                            <field name="pt_value"/>
+                            <field name="pt_normal_value"/>
+                            <field name="co_test_name"/>
+                            <field name="co_value"/>
+                            <field name="co_normal_value"/>
+                            <field name="inr_test_name"/>
+                            <field name="inr_value"/>
+                            <field name="inr_normal_value"/>
+                            <field name="rbs_test_name"/>
+                            <field name="rbs_value"/>
+                            <field name="rbs_normal_value"/>
+                            <field name="sc_test_name"/>
+                            <field name="sc_value"/>
+                            <field name="sc_normal_value"/>
+                            <field name="ur_test_name"/>
+                            <field name="ur_value"/>
+                            <field name="ur_normal_value"/>
+                            <field name="sg_test_name"/>
+                            <field name="sg_value"/>
+                            <field name="sg_normal_value"/>
+                            <field name="sgp_test_name"/>
+                            <field name="sgp_value"/>
+                            <field name="sgp_normal_value"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         #-----------tree--------
+
+        <record id="laboratory_tree" model="ir.ui.view">
+            <field name="name">laboratory.tree</field>
+            <field name="model">lab.reports</field>
+            <field name="arch" type="xml">
+                <tree string="Blood Clinical Chemistry Report">
+                    <field name="st_ids"/>
+                    <field name="he_test_name"/>
+                    <field name="he_value"/>
+                    <field name="he_normal_value"/>
+                    <field name="cl_test_name"/>
+                    <field name="cl_value"/>
+                    <field name="cl_normal_value"/>
+                    <field name="pt_test_name"/>
+                    <field name="pt_value"/>
+                    <field name="pt_normal_value"/>
+                    <field name="co_test_name"/>
+                    <field name="co_value"/>
+                    <field name="co_normal_value"/>
+                    <field name="inr_test_name"/>
+                    <field name="inr_value"/>
+                    <field name="inr_normal_value"/>
+                    <field name="rbs_test_name"/>
+                    <field name="rbs_value"/>
+                    <field name="rbs_normal_value"/>
+                    <field name="sc_test_name"/>
+                    <field name="sc_value"/>
+                    <field name="sc_normal_value"/>
+                    <field name="ur_test_name"/>
+                    <field name="ur_value"/>
+                    <field name="ur_normal_value"/>
+                    <field name="sg_test_name"/>
+                    <field name="sg_value"/>
+                    <field name="sg_normal_value"/>
+                    <field name="sgp_test_name"/>
+                    <field name="sgp_value"/>
+                    <field name="sgp_normal_value"/>
+                </tree>
+            </field>
+        </record>
+
+        #--------action--------------
+
+        <record id="laboratory_view_action" model="ir.actions.act_window">
+            <field name="name">Daly's Lab (For Medical lab . Investigation)</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lab.reports</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        #--------menu item----------
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="lab_reports_categ" name="Laboratory Reports" parent="oi_clinic_root" action="laboratory_view_action" sequence="7"/>
+
+
+    </data>
+
+</odoo>

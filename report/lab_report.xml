@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+ <data>
+     <report
+        id="lab_report"
+        model="lab.reports"
+        report_type="qweb-html"
+        string="Print Report"
+        name="oi_clinic.report"
+        file="oi_clinic.report"
+      />
+ </data>
+</odoo>
+
+
+
