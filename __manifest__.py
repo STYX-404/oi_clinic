@@ -33,6 +33,7 @@
         'views/docs_and_nurses_views.xml',
         'sequences/docsAndNurses_code.xml',
         'views/laboratory_view.xml',
+        'views/medical_follow_up_view.xml',
         'report/st_lab_report.xml',
         'report/lab_report.xml',
 

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        #--------form--------------
+
+        <record id="medical_follow_up_form" model="ir.ui.view">
+            <field name="name">medical.follow.up.form</field>
+            <field name="model">medicalfollowup.data</field>
+            <field name="arch" type="xml">
+                <form string="Medical Follow Up">
+                    <sheet>
+                          <notebook>
+                        <page name="student" string="Students">
+                                    <group>
+                                        <field name="stu_ids"/>
+                                    </group>
+                                    <group col="4">
+                                        <field name="diagnosis"/>
+                                        <field name="date"/>
+                                    </group>
+                                    <group col="4">
+                                        <field name="doctor_id"/>
+                                        <field name="nurse_id"/>
+                                    </group>
+
+                        </page>
+                              <page name="doe" string="Doctors and Employees">
+                                  <group>
+                                        <field name="em_ids"/>
+                                  </group>
+                                    <group col="4">
+                                        <field name="diagnosis"/>
+                                        <field name="date"/>
+                                    </group>
+                                    <group >
+                                        <field name="doctor_id"/>
+                                    </group>
+
+                              </page>
+                          </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        #--------tree--------------
+
+        <record id="medical_follow_up_tree" model="ir.ui.view">
+            <field name="name">medical.follow.up.tree</field>
+            <field name="model">medicalfollowup.data</field>
+            <field name="arch" type="xml">
+                <tree string="Medical Follow Up">
+                    <field name="stu_ids"/>
+                    <field name="em_ids"/>
+                    <field name="doctor_id"/>
+                    <field name="nurse_id"/>
+                    <field name="diagnosis"/>
+                    <field name="date"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+        #--------action--------------
+
+        <record id="medical_follow_up_action" model="ir.actions.act_window">
+            <field name="name">Medical Follow UP</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medicalfollowup.data</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        #--------menu item----------
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="medical_follow_up_categ" name="Medical Follow Up" parent="oi_clinic_root" action="medical_follow_up_action" sequence="4"/>
+
+
+
+    </data>
+</odoo>

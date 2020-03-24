@@ -3,5 +3,8 @@ access_students_data,students.data,model_students_data,,1,1,1,1
 access_employees_data,employees.data,model_employees_data,,1,1,1,1
 access_doctors_data,doctors.data,model_doctors_data,,1,1,1,1
 access_lab_reports,lab.reports,model_lab_reports,,1,1,1,1
+access_medicalfollowup_data,medicalfollowup.data,model_medicalfollowup_data,,1,1,1,1
+
+
 
 

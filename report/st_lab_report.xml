@@ -36,52 +36,52 @@
                                 </thead>
                                 <tbody>
                                        <tr class="text-center">
-                                           <td> <span t-field="doc.he_test_name"/> </td>
+                                           <td> Hemoglobin - Hb % </td>
                                            <td> <span t-field="doc.he_value"/> </td>
                                            <td> <span t-field="doc.he_normal_value"/> </td>
                                        </tr>
                                        <tr class="text-center">
-                                           <td> <span t-field="doc.cl_test_name"/> </td>
+                                           <td> Control </td>
                                            <td> <span t-field="doc.cl_value"/> </td>
                                            <td> <span t-field="doc.cl_normal_value"/> </td>
                                        </tr>
                                        <tr class="text-center">
-                                           <td> <span t-field="doc.pt_test_name"/> </td>
+                                           <td> Patient Time </td>
                                            <td> <span t-field="doc.pt_value"/> </td>
                                            <td> <span t-field="doc.pt_normal_value"/> </td>
                                        </tr>
                                        <tr class="text-center">
-                                           <td> <span t-field="doc.co_test_name"/> </td>
+                                           <td> Concentration </td>
                                            <td> <span t-field="doc.co_value"/> </td>
                                            <td> <span t-field="doc.co_normal_value"/> </td>
                                        </tr>
                                        <tr class="text-center">
-                                           <td> <span t-field="doc.inr_test_name"/> </td>
+                                           <td> INR </td>
                                            <td> <span t-field="doc.inr_value"/> </td>
                                            <td> <span t-field="doc.inr_normal_value"/> </td>
                                        </tr>
                                        <tr class="text-center">
-                                           <td> <span t-field="doc.rbs_test_name"/> </td>
+                                           <td> Random Blood Sugar </td>
                                            <td> <span t-field="doc.rbs_value"/> </td>
                                            <td> <span t-field="doc.rbs_normal_value"/> </td>
                                        </tr>
                                        <tr class="text-center">
-                                           <td> <span t-field="doc.sc_test_name"/> </td>
+                                           <td> S.Creatinine </td>
                                            <td> <span t-field="doc.sc_value"/> </td>
                                            <td> <span t-field="doc.sc_normal_value"/> </td>
                                        </tr>
                                        <tr class="text-center">
-                                           <td> <span t-field="doc.ur_test_name"/> </td>
+                                           <td> Urea </td>
                                            <td> <span t-field="doc.ur_value"/> </td>
                                            <td> <span t-field="doc.ur_normal_value"/> </td>
                                        </tr>
                                        <tr class="text-center">
-                                           <td> <span t-field="doc.sg_test_name"/> </td>
+                                           <td> S.GOT </td>
                                            <td> <span t-field="doc.sg_value"/> </td>
                                            <td> <span t-field="doc.sg_normal_value"/> </td>
                                        </tr>
                                        <tr class="text-center">
-                                           <td> <span t-field="doc.sgp_test_name"/> </td>
+                                           <td> S.GPT </td>
                                            <td> <span t-field="doc.sgp_value"/> </td>
                                            <td> <span t-field="doc.sgp_normal_value"/> </td>
                                        </tr>
