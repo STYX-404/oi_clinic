@@ -8,6 +8,7 @@ from odoo.odoo.modules.module import get_module_resource
 
 class Employees(models.Model):
     _name = 'employees.data'
+    _rec_name = 'e_name'
     _description = 'this model is for employees and professors data'
     #
 

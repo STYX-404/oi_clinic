@@ -5,7 +5,7 @@
      <report
         id="lab_report"
         model="lab.reports"
-        report_type="qweb-html"
+        report_type="qweb-pdf"
         string="Print Report"
         name="oi_clinic.report"
         file="oi_clinic.report"

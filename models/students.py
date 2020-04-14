@@ -4,7 +4,7 @@ from odoo import models, api, fields
 
 class Students(models.Model):
     _name = 'students.data'
-    #_rec_name = 'students.data'
+    _rec_name = 'st_name'
     _description = 'the Students model is used for adding new students and there information to the database.'
 
     st_name = fields.Char(string="Student name", required=True, )

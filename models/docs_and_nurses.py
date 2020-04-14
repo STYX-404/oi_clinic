@@ -3,6 +3,7 @@ from odoo import models, api, fields
 
 class Doctors(models.Model):
     _name = 'doctors.data'
+    _rec_name = 'doctors_name'
     _description = 'this model is for employees and professors data'
 
     doctors_image = fields.Binary(string="Add image",)
