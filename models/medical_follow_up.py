@@ -12,3 +12,6 @@ class StudentsFollowUp(models.Model):
     nurse_id = fields.Many2one(comodel_name="doctors.data", string="Nurse", required=True, )
     em_ids = fields.Many2many(comodel_name="employees.data", column1="e_name", column2="e_code", string="Doctor Or Employee Information", )
     date = fields.Date(string="Date", default=fields.Date.today(), )
+
+
+

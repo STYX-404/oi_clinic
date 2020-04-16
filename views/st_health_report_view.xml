@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         #--------form--------------
+
+        <record id="healthreport_form" model="ir.ui.view">
+            <field name="name">healthreport.form</field>
+            <field name="model">health.report</field>
+            <field name="arch" type="xml">
+                <form string="Health Report Form">
+                    <sheet>
+                        <group string="Student Information">
+                            <field name="st_ids"/>
+                        </group>
+                        <group col="4" string="Result of blood testing">
+                            <field name="he_value"/>
+                            <field name="he_normal_value"/>
+                            <field name="cl_value"/>
+                            <field name="cl_normal_value"/>
+                            <field name="pt_value"/>
+                            <field name="pt_normal_value"/>
+                            <field name="co_value"/>
+                            <field name="co_normal_value"/>
+                            <field name="inr_value"/>
+                            <field name="inr_normal_value"/>
+                            <field name="rbs_value"/>
+                            <field name="rbs_normal_value"/>
+                            <field name="sc_value"/>
+                            <field name="sc_normal_value"/>
+                            <field name="ur_value"/>
+                            <field name="ur_normal_value"/>
+                            <field name="sg_value"/>
+                            <field name="sg_normal_value"/>
+                            <field name="sgp_value"/>
+                            <field name="sgp_normal_value"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         #-----------tree--------
+
+        <record id="healthreport_tree" model="ir.ui.view">
+            <field name="name">healthreport.tree</field>
+            <field name="model">health.report</field>
+            <field name="arch" type="xml">
+                <tree string="Blood Clinical Chemistry Report">
+                    <field name="st_ids"/>
+                    <field name="he_value"/>
+                    <field name="he_normal_value"/>
+                    <field name="cl_value"/>
+                    <field name="cl_normal_value"/>
+                    <field name="pt_value"/>
+                    <field name="pt_normal_value"/>
+                    <field name="co_value"/>
+                    <field name="co_normal_value"/>
+                    <field name="inr_value"/>
+                    <field name="inr_normal_value"/>
+                    <field name="rbs_value"/>
+                    <field name="rbs_normal_value"/>
+                    <field name="sc_value"/>
+                    <field name="sc_normal_value"/>
+                    <field name="ur_value"/>
+                    <field name="ur_normal_value"/>
+                    <field name="sg_value"/>
+                    <field name="sg_normal_value"/>
+                    <field name="sgp_value"/>
+                    <field name="sgp_normal_value"/>
+                </tree>
+            </field>
+        </record>
+
+        #--------action--------------
+
+        <record id="healthreport_view_action" model="ir.actions.act_window">
+            <field name="name">Student Health Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">health.report</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        #--------menu item----------
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="health_report_categ" name="Student Health Report" parent="oi_clinic_root" action="healthreport_view_action" sequence="6"/>
+
+
+    </data>
+
+</odoo>

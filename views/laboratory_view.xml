@@ -10,31 +10,6 @@
             <field name="arch" type="xml">
                 <form string="Laboratory Form">
                     <sheet>
-                        <group string="Student Information">
-                            <field name="st_ids"/>
-                        </group>
-                        <group col="4" string="Result of blood testing">
-                            <field name="he_value"/>
-                            <field name="he_normal_value"/>
-                            <field name="cl_value"/>
-                            <field name="cl_normal_value"/>
-                            <field name="pt_value"/>
-                            <field name="pt_normal_value"/>
-                            <field name="co_value"/>
-                            <field name="co_normal_value"/>
-                            <field name="inr_value"/>
-                            <field name="inr_normal_value"/>
-                            <field name="rbs_value"/>
-                            <field name="rbs_normal_value"/>
-                            <field name="sc_value"/>
-                            <field name="sc_normal_value"/>
-                            <field name="ur_value"/>
-                            <field name="ur_normal_value"/>
-                            <field name="sg_value"/>
-                            <field name="sg_normal_value"/>
-                            <field name="sgp_value"/>
-                            <field name="sgp_normal_value"/>
-                        </group>
                     </sheet>
                 </form>
             </field>
@@ -47,27 +22,7 @@
             <field name="model">lab.reports</field>
             <field name="arch" type="xml">
                 <tree string="Blood Clinical Chemistry Report">
-                    <field name="st_ids"/>
-                    <field name="he_value"/>
-                    <field name="he_normal_value"/>
-                    <field name="cl_value"/>
-                    <field name="cl_normal_value"/>
-                    <field name="pt_value"/>
-                    <field name="pt_normal_value"/>
-                    <field name="co_value"/>
-                    <field name="co_normal_value"/>
-                    <field name="inr_value"/>
-                    <field name="inr_normal_value"/>
-                    <field name="rbs_value"/>
-                    <field name="rbs_normal_value"/>
-                    <field name="sc_value"/>
-                    <field name="sc_normal_value"/>
-                    <field name="ur_value"/>
-                    <field name="ur_normal_value"/>
-                    <field name="sg_value"/>
-                    <field name="sg_normal_value"/>
-                    <field name="sgp_value"/>
-                    <field name="sgp_normal_value"/>
+
                 </tree>
             </field>
         </record>
@@ -75,7 +30,7 @@
         #--------action--------------
 
         <record id="laboratory_view_action" model="ir.actions.act_window">
-            <field name="name">Laboratory Reports</field>
+            <field name="name">Laboratory</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">lab.reports</field>
             <field name="view_mode">tree,form</field>
@@ -85,7 +40,7 @@
         #--------menu item----------
 
         <!-- This Menu Item must have a parent and an action -->
-        <menuitem id="lab_reports_categ" name="Laboratory Reports" parent="oi_clinic_root" action="laboratory_view_action" sequence="7"/>
+        <menuitem id="lab_reports_categ" name="Laboratory" parent="oi_clinic_root" action="laboratory_view_action" sequence="7"/>
 
 
     </data>
