@@ -40,6 +40,8 @@
         'sequences/laboratory_code.xml',
         'report/students_report.xml',
         'report/stu_reports.xml',
+        'report/lab_report.xml',
+        'report/laboratory_report.xml',
 
     ],
     # only loaded in demonstration mode

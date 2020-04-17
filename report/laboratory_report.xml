@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+ <data>
+     <report
+        id="lab_report"
+        model="lab.reports"
+        report_type="qweb-pdf"
+        string="Laboratory Information Report"
+        name="oi_clinic.report3"
+        file="oi_clinic.report3"
+      />
+ </data>
+</odoo>

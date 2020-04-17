@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+     <template id="report3">
+        <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+
+                        <h2 style="background: white; color:red">Laboratory Information</h2>
+
+                            <table class="table table-bordered mt32">
+                                <thead>
+                                      <tr>
+                                         <th class="text-center" style="background:black; color: white"> <span t-field="doc.lab_name"/> </th>
+                                      </tr>
+                                 </thead>
+                            </table>
+
+
+                            <table class="table table-bordered mt32">
+                                <thead>
+                                       <tr>
+                                          <th class="text-center" style="background:black; color: white">Branch Address</th>
+                                          <th class="text-center" style="background:black; color: white">phone Number</th>
+                                           <th class="text-center" style="background:black; color: white">Another phone Number</th>
+                                       </tr>
+                                </thead>
+                                <tbody>
+                                       <tr class="text-center">
+                                           <td> <span t-field="doc.lab_branch"/> </td>
+                                           <td> <span t-field="doc.lab_phone"/>  </td>
+                                           <td> <span t-field="doc.second_phone"/> </td>
+                                       </tr>
+                                       <tr class="text-center">
+                                           <td> <span t-field="doc.sec_branch"/> </td>
+                                           <td> <span t-field="doc.sec_branch_num"/> </td>
+                                           <td> <span t-field="doc.sec_phone_sec_branch"/>  </td>
+                                       </tr>
+
+                                </tbody>
+                            </table>
+
+                    </t>
+                </t>
+        </t>
+     </template>
+    </data>
+</odoo>
