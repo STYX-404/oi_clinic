@@ -38,6 +38,8 @@
         'report/st_health_report.xml',
         'report/health_report.xml',
         'sequences/laboratory_code.xml',
+        'report/students_report.xml',
+        'report/stu_reports.xml',
 
     ],
     # only loaded in demonstration mode

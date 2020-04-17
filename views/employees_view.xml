@@ -8,9 +8,8 @@
             <field name="arch" type="xml">
                 <form string="employees and professors">
                     <sheet>
-
                         <div id="o_employee_container"><div id="o_employee_main">
-                        <field name="image" widget='image' class="oe_avatar" options='{"preview_image":"image_medium"}'/>
+                        <field name="image" widget='image' class="oe_avatar"/>
                         <div class="oe_title">
                             <label for="e_name" class="oe_edit_only"/>
                             <h1>
@@ -72,18 +71,6 @@
 
                         </notebook>
 
-
-
-
-
-<!--                        <group col="2" colspan="2" string="Employee information">-->
-<!--                            <field name="e_image" widget="image" class="oe_avatar oe_left"/>-->
-<!--                            <field name="e_name"/>-->
-<!--                            <field name="e_job"/>-->
-<!--                            <field name="e_phone"/>-->
-<!--                            <field name="e_email"/>-->
-<!--                            <field name="e_code"/>-->
-<!--                        </group>-->
                         </div></div>
                     </sheet>
                 </form>
@@ -137,7 +124,7 @@
              <t t-name="kanban-box">
                 <div t-attf-class="oe_module_vignette oe_kanban_global_click">
                     <div class="o_kanban_image">
-                        <img type="title" alt="Avatar" t-att-src="kanban_image('employees.data', 'e_image', record.id.raw_value)"/>
+                        <img type="title" alt="Avatar" t-att-src="kanban_image('employees.data', 'image', record.id.raw_value)"/>
                     </div>
                     <div class="oe_kanban_details">
                     <ul>
