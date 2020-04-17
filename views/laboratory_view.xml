@@ -4,15 +4,74 @@
 
          #--------form--------------
 
-        <record id="laboratory_form" model="ir.ui.view">
-            <field name="name">laboratory.form</field>
+        <record id="lab_form" model="ir.ui.view">
+            <field name="name">lab.form</field>
             <field name="model">lab.reports</field>
             <field name="arch" type="xml">
                 <form string="Laboratory Form">
                     <sheet>
+                        <div id="lab_container"><div id="lab_main">
+                        <field name="lab_image" widget="image" class="oe_avatar oe_left"/>
+                        <div class="oe_title">
+                            <label for="lab_name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="lab_name" placeholder="Laboratory's Name" required="True"/>
+                            </h1>
+                        </div>
+                            <group>
+                                <field name="lab_id"/>
+                            </group>
+                        <group string="Branch Information" col="4">
+                            <field name="lab_branch"/>
+                            <field name="lab_phone"/>
+                            <field name="another_phone"/>
+                            <field name="second_phone" attrs="{'invisible': [('another_phone', '=', False)]}"/>
+                        </group>
+                            <group>
+                                <field name="another_branch"/>
+                            </group>
+                        <group col="4">
+                            <field name="sec_branch" attrs="{'invisible': [('another_branch', '=', False)]}"/>
+                            <field name="sec_branch_num" attrs="{'invisible': [('another_branch', '=', False)]}"/>
+                            <field name="another_phone_sec_branch" attrs="{'invisible': [('another_branch', '=', False)]}" />
+                            <field name="sec_phone_sec_branch" attrs="{'invisible': [('another_phone_sec_branch', '=', False)]}" />
+                        </group>
+                        </div></div>
                     </sheet>
                 </form>
             </field>
+        </record>
+
+         #--------kanban--------------
+
+
+        <record id="lab_kanban" model="ir.ui.view">
+         <field name="name">lab.kanban</field>
+          <field name="model">lab.reports</field>
+         <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="lab_name"/>
+                <field name="lab_phone"/>
+                <field name="lab_id"/>
+         <templates>
+             <t t-name="kanban-box">
+                <div t-attf-class="oe_module_vignette oe_kanban_global_click">
+                    <div class="o_kanban_image">
+                        <img type="title" alt="Avatar" t-att-src="kanban_image('lab.reports', 'lab_image', record.id.raw_value)"/>
+                    </div>
+                    <div class="oe_kanban_details">
+                    <ul>
+                        <li><strong> <field name="lab_name"/> </strong></li>
+                        <li class="text-success"> <field name="lab_phone"/> </li>
+                        <li class="text-success"> <field name="lab_id"/> </li>
+                    </ul>
+                </div>
+            </div>
+         </t>
+         </templates>
+         </kanban>
+         </field>
         </record>
 
          #-----------tree--------
@@ -21,8 +80,15 @@
             <field name="name">laboratory.tree</field>
             <field name="model">lab.reports</field>
             <field name="arch" type="xml">
-                <tree string="Blood Clinical Chemistry Report">
-
+                <tree string="Laboratory Information">
+                        <field name="lab_name"/>
+                        <field name="lab_id"/>
+                        <field name="lab_branch"/>
+                        <field name="lab_phone"/>
+                        <field name="second_phone"/>
+                        <field name="sec_branch"/>
+                        <field name="sec_branch_num"/>
+                        <field name="sec_phone_sec_branch"/>
                 </tree>
             </field>
         </record>
@@ -33,7 +99,7 @@
             <field name="name">Laboratory</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">lab.reports</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">kanban,tree,form</field>
         </record>
 
 
