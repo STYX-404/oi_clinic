@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+ <data>
+     <report
+        id="stu_report"
+        model="students.data"
+        report_type="qweb-pdf"
+        string="student information Report"
+        name="oi_clinic.report"
+        file="oi_clinic.report"
+      />
+ </data>
+</odoo>

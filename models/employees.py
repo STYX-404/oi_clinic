@@ -1,11 +1,7 @@
 import base64
-
 from odoo import api, fields, models
-
-from odoo.odoo import tools, _
-from odoo.odoo.exceptions import ValidationError, AccessError
 from odoo.odoo.modules.module import get_module_resource
-
+from odoo.odoo import tools
 class Employees(models.Model):
     _name = 'employees.data'
     _rec_name = 'e_name'
@@ -18,7 +14,6 @@ class Employees(models.Model):
         image_path = get_module_resource('hr', 'static/src/img', 'default_image.png')
         return tools.image_resize_image_big(base64.b64encode(open(image_path, 'rb').read()))
 
-    # e_image = fields.Binary(string="Add image",)
     e_job = fields.Selection(string="Employee job", selection=[('p', 'Professor'),
                                                                ('ta', 'Teaching assistant'),
                                                                ('l','Labor') ], required=True, )
@@ -69,19 +64,9 @@ class Employees(models.Model):
         ('Not educated', 'Not educated'),
     ], 'Certificate Level', default='master',)
 
-    image = fields.Binary(
-        "Photo", default=_default_image, attachment=True,
-        help="This field holds the image used as photo for the employee, limited to 1024x1024px.")
-    image_medium = fields.Binary(
-        "Medium-sized photo", attachment=True,
-        help="Medium-sized photo of the employee. It is automatically "
-             "resized as a 128x128px image, with aspect ratio preserved. "
-             "Use this field in form views or some kanban views.")
-    image_small = fields.Binary(
-        "Small-sized photo", attachment=True,
-        help="Small-sized photo of the employee. It is automatically "
-             "resized as a 64x64px image, with aspect ratio preserved. "
-             "Use this field anywhere a small image is required.")
+    image = fields.Binary("Photo", default=_default_image, attachment=True,)
+    image_medium = fields.Binary("Medium-sized photo", attachment=True,)
+    image_small = fields.Binary("Small-sized photo", attachment=True,)
 
 
     @api.model

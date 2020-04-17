@@ -8,11 +8,23 @@
             <field name="arch" type="xml">
                 <form string="Students">
                     <sheet>
+                        <field name="image" widget='image' class="oe_avatar" />
+                        <div class="oe_title">
+                            <label for="st_name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="st_name" placeholder="Student's name" required="True"/>
+                            </h1>
+                        </div>
                         <group col="4" colspan="2" string="Student information">
-                            <field name="st_name"/>
                             <field name="st_major"/>
+                            <field name="st_email" widget="email"/>
                             <field name="st_academic_year"/>
+                            <field name="st_password"/>
                             <field name="st_code"/>
+                        </group>
+                        <group col="4" colspan="2" string="Personal information">
+                            <field name="st_phone" widget="phone"/>
+                            <field name="st_address"/>
                         </group>
                     </sheet>
                 </form>
@@ -43,10 +55,48 @@
                     <field name="st_name"/>
                     <field name="st_major"/>
                     <field name="st_academic_year"/>
+                    <field name="st_email" widget="email"/>
+                    <field name="st_password"/>
+                    <field name="st_phone" widget="phone"/>
+                    <field name="st_address"/>
                     <field name="st_code"/>
                 </tree>
             </field>
         </record>
+
+        #--------kanban--------------
+
+        <record id="students_kanban" model="ir.ui.view">
+         <field name="name">students.kanban</field>
+          <field name="model">students.data</field>
+         <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="st_name"/>
+                <field name="st_major"/>
+                <field name="st_academic_year"/>
+                <field name="st_code"/>
+         <templates>
+             <t t-name="kanban-box">
+                <div t-attf-class="oe_module_vignette oe_kanban_global_click">
+                    <div class="o_kanban_image">
+                        <img type="title" alt="Avatar" t-att-src="kanban_image('students.data', 'image', record.id.raw_value)"/>
+                    </div>
+                    <div class="oe_kanban_details">
+                    <ul>
+                        <li><strong> <field name="st_name"/></strong></li>
+                        <li class="text-danger"> <field name="st_major"/> </li>
+                        <li> <field name="st_academic_year"/> </li>
+                        <li><strong><field name="st_code"/></strong> </li>
+                    </ul>
+                </div>
+            </div>
+         </t>
+         </templates>
+         </kanban>
+         </field>
+        </record>
+
 
 
         #--------action--------------
@@ -55,7 +105,7 @@
             <field name="name">Students</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">students.data</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
 
         #--------menu item----------

@@ -37,6 +37,8 @@
         'views/st_health_report_view.xml',
         'report/st_health_report.xml',
         'report/health_report.xml',
+        'report/students_report.xml',
+        'report/stu_reports.xml',
 
     ],
     # only loaded in demonstration mode
