@@ -20,7 +20,7 @@
                             <field name="st_email" widget="email"/>
                             <field name="st_academic_year"/>
                             <field name="st_password"/>
-                            <field name="st_code"/>
+                            <field class="text-danger" name="st_code"/>
                         </group>
                         <group col="4" colspan="2" string="Personal information">
                             <field name="st_phone" widget="phone"/>
@@ -59,7 +59,7 @@
                     <field name="st_password"/>
                     <field name="st_phone" widget="phone"/>
                     <field name="st_address"/>
-                    <field name="st_code"/>
+                    <field class="text-danger" name="st_code"/>
                 </tree>
             </field>
         </record>
@@ -85,9 +85,9 @@
                     <div class="oe_kanban_details">
                     <ul>
                         <li><strong> <field name="st_name"/></strong></li>
-                        <li class="text-danger"> <field name="st_major"/> </li>
+                        <li> <field name="st_major"/> </li>
                         <li> <field name="st_academic_year"/> </li>
-                        <li><strong><field name="st_code"/></strong> </li>
+                        <li class="text-danger"><strong><field name="st_code"/></strong> </li>
                     </ul>
                 </div>
             </div>

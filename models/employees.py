@@ -19,8 +19,9 @@ class Employees(models.Model):
                                                                ('l','Labor') ], required=True, )
 
     e_name = fields.Char(string="Name", required=True, )
-    e_phone = fields.Char(string="Phone number", required=False, )
-    e_email = fields.Char(string="E-mail", required=False, )
+    e_phone = fields.Char(string="Phone number", required=True, )
+    e_email = fields.Char(string="E-mail", required=False, compute="gen_email")
+    e_password = fields.Char(string="Password", required=True, compute="gen_password")
     e_code = fields.Char(string="Employee code", required=False, )
     e_notes = fields.Text('Notes')
     passport_id = fields.Char('Passport No',)
@@ -77,3 +78,30 @@ class Employees(models.Model):
     @api.multi
     def write(self, values):
         return super(Employees, self).write(values)
+
+    # ------------------- generate email ---------------------
+
+    @api.multi
+    @api.depends('e_name', 'e_code')
+    def gen_email(self):
+        for record in self:
+            domain = "@oi.edu.eg"
+            name = record.e_name.__str__().split(" ")
+            id = record.e_code.__str__()
+            if name.__len__() >= 2:
+                unique_name = name[0] + "_" + name[1]
+                record.e_email = unique_name + "_" + id + domain
+            else:
+                unique_name = name[0]
+                record.e_email = unique_name + "_" + id + domain
+
+    # ------------------- generate email password ---------------------
+
+    @api.multi
+    @api.depends('e_name', 'e_code', 'e_phone')
+    def gen_password(self):
+        for record in self:
+            name = record.e_name.__str__()
+            id = record.e_code.__str__()
+            phone_num = record.e_phone.__str__()
+            record.e_password = name[0] + name[1] + id + phone_num[-2] + phone_num[-1]

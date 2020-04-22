@@ -6,7 +6,7 @@
         id="stu_report"
         model="students.data"
         report_type="qweb-pdf"
-        string="student information Report"
+        string="student Report"
         name="oi_clinic.report2"
         file="oi_clinic.report2"
       />

@@ -5,44 +5,49 @@
      <template id="report2">
         <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="doc">
-                    <t t-call="web.external_layout">
+                    <t t-call="web.internal_layout">
 
-                        <h2 style="background: black; color:white">Student information</h2>
+                        <h2 class="text-center" style="background:#c4c4c4; color:black">Student information</h2>
 
                             <table class="table table-bordered mt32">
                             <tr>
-                              <th style="background:black; color: white">name</th>
-                                <td> <span t-field="doc.st_name"/> </td>
+                              <th class="text-center" style="background:#6B79E0; color: white">Name</th>
+                                <td style="background:#c4c4c4;"> <span t-field="doc.st_name"/> </td>
+                            </tr>
+
+                                <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Major</th>
+                                <td style="background:#c4c4c4;"> <span t-field="doc.st_major"/> </td>
                             </tr>
 
                             <tr>
-                              <th style="background:black; color: white">year</th>
-                              <td> <span t-field="doc.st_academic_year"/> </td>
+                              <th class="text-center" style="background:#6B79E0; color: white">Year</th>
+                              <td style="background:#c4c4c4;"> <span t-field="doc.st_academic_year"/> </td>
                             </tr>
 
                             <tr>
-                              <th style="background:black; color: white">code</th>
-                              <td><span t-field="doc.st_code"/></td>
+                              <th class="text-center" style="background:#6B79E0; color: white">Code</th>
+                              <td style="background:#c4c4c4;"><span t-field="doc.st_code"/></td>
                             </tr>
 
                             <tr>
-                              <th style="background:black; color: white">e-mail</th>
-                              <td><span t-field="doc.st_email"/></td>
+                              <th class="text-center" style="background:#6B79E0; color: white">E-mail</th>
+                              <td style="background:#c4c4c4;"><span t-field="doc.st_email"/></td>
                             </tr>
 
                             <tr>
-                              <th style="background:black; color: white">password</th>
-                              <td><span t-field="doc.st_password"/></td>
+                              <th class="text-center" style="background:#6B79E0; color: white">Password</th>
+                              <td style="background:#c4c4c4;"><span t-field="doc.st_password"/></td>
                             </tr>
 
                             <tr>
-                              <th style="background:black; color: white">phone</th>
-                              <td><span t-field="doc.st_phone"/></td>
+                              <th class="text-center" style="background:#6B79E0; color: white">Phone</th>
+                              <td style="background:#c4c4c4;"><span t-field="doc.st_phone"/></td>
                             </tr>
 
                             <tr>
-                              <th style="background:black; color: white">address</th>
-                              <td><span t-field="doc.st_address"/></td>
+                              <th class="text-center" style="background:#6B79E0 ; color: white">Address</th>
+                              <td style="background:#c4c4c4;"><span t-field="doc.st_address"/></td>
                             </tr>
 
                             </table>
