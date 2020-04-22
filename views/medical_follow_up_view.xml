@@ -2,81 +2,126 @@
 <odoo>
     <data>
 
-        #--------form--------------
+        #--------student form--------------
 
-        <record id="medical_follow_up_form" model="ir.ui.view">
-            <field name="name">medical.follow.up.form</field>
+        <record id="stu_mfu_form" model="ir.ui.view">
+            <field name="name">stu.mfu.form</field>
             <field name="model">medicalfollowup.data</field>
             <field name="arch" type="xml">
-                <form string="Medical Follow Up">
+                <form string="Student Medical Follow Up">
                     <sheet>
-                          <notebook>
-                        <page name="student" string="Students">
-                                    <group>
-                                        <field name="stu_ids"/>
-                                    </group>
-                                    <group col="4">
-                                        <field name="diagnosis"/>
-                                        <field name="date"/>
-                                    </group>
-                                    <group col="4">
-                                        <field name="doctor_id"/>
-                                        <field name="nurse_id"/>
-                                    </group>
-
-                        </page>
-                              <page name="doe" string="Doctors and Employees">
-                                  <group>
-                                        <field name="em_ids"/>
-                                  </group>
-                                    <group col="4">
-                                        <field name="diagnosis"/>
-                                        <field name="date"/>
-                                    </group>
-                                    <group >
-                                        <field name="doctor_id"/>
-                                    </group>
-
-                              </page>
-                          </notebook>
-
+                        <group>
+                            <field name="stu_ids"/>
+                        </group>
+                        <group col="4" >
+                            <field name="stu_diagnosis"/>
+                            <field name="stu_date"/>
+                        </group>
+                        <group  col="4">
+                            <field name="stu_doctor"/>
+                            <field name="stu_nurse"/>
+                        </group>
                     </sheet>
                 </form>
             </field>
         </record>
 
-        #--------tree--------------
 
-        <record id="medical_follow_up_tree" model="ir.ui.view">
-            <field name="name">medical.follow.up.tree</field>
+        #--------employee form--------------
+
+        <record id="em_mfu_form" model="ir.ui.view">
+            <field name="name">em.mfu.form</field>
             <field name="model">medicalfollowup.data</field>
             <field name="arch" type="xml">
-                <tree string="Medical Follow Up">
-                    <field name="stu_ids"/>
-                    <field name="em_ids"/>
-                    <field name="doctor_id"/>
-                    <field name="nurse_id"/>
-                    <field name="diagnosis"/>
-                    <field name="date"/>
+                <form string="Employee Medical follow up">
+                    <sheet>
+                       <group>
+                            <field name="em_ids"/>
+                        </group>
+                        <group col="4" >
+                            <field name="em_diagnosis"/>
+                            <field name="em_date"/>
+                        </group>
+                        <group>
+                            <field name="em_doctor"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 
+        #--------student tree--------------
+
+        <record id="stu_mfu_tree" model="ir.ui.view">
+            <field name="name">stu.mfu.tree</field>
+            <field name="model">medicalfollowup.data</field>
+            <field name="arch" type="xml">
+                <tree string="Student Tree">
+                    <field name="stu_ids"/>
+                    <field name="stu_diagnosis"/>
+                    <field name="stu_date"/>
+                    <field name="stu_doctor"/>
+                    <field name="stu_nurse"/>
                 </tree>
             </field>
         </record>
 
 
-        #--------action--------------
+        #--------employee tree--------------
 
-        <record id="medical_follow_up_action" model="ir.actions.act_window">
-            <field name="name">Medical Follow UP</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">medicalfollowup.data</field>
-            <field name="view_mode">tree,form</field>
+        <record id="em_mfu_tree" model="ir.ui.view">
+            <field name="name">em.mfu.tree</field>
+            <field name="model">medicalfollowup.data</field>
+            <field name="arch" type="xml">
+                <tree string="Doctor Tree">
+                    <field name="em_ids"/>
+                     <field name="em_diagnosis"/>
+                    <field name="em_date"/>
+                    <field name="em_doctor"/>
+                </tree>
+            </field>
         </record>
 
-        #--------menu item----------
 
-        <!-- This Menu Item must have a parent and an action -->
-        <menuitem id="medical_follow_up_categ" name="Medical Follow Up" parent="oi_clinic_root" action="medical_follow_up_action" sequence="4"/>
+        #--------student action--------------
+
+        <record id="stu_mfu_view_action" model="ir.actions.act_window">
+            <field name="name">Student Medical Follow Up</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medicalfollowup.data</field>
+            <field name="view_id" ref="stu_mfu_tree"/>
+            <field name="view_id" ref="stu_mfu_form"/>
+            <field name="view_mode">form,tree</field>
+        </record>
+
+
+        #-------- Employee action ----------
+
+        <record id="em_mfu_view_action" model="ir.actions.act_window">
+            <field name="name">Employee Medical Follow Up</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medicalfollowup.data</field>
+            <field name="view_id" ref="em_mfu_tree"/>
+            <field name="view_id" ref="em_mfu_form"/>
+            <field name="view_mode">form,tree</field>
+        </record>
+
+
+         #-------- menu item----------
+
+       <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+       <menuitem id="medical_follow_up_root" name="Medical Follow Up " parent="oi_clinic_root" sequence="4"/>
+
+
+        #--------student action--------------
+
+      <!-- This Menu Item must have a parent and an action -->
+       <menuitem id="stu_mfu_categ" name="Student Medical Follow Up" parent="medical_follow_up_root" action="stu_mfu_view_action" sequence="1"/>
+
+
+        #--------doctor menu item----------
+      <!-- This Menu Item must have a parent and an action -->
+       <menuitem id="em_mfu_categ" name="Employee Medical Follow Up" parent="medical_follow_up_root" action="em_mfu_view_action" sequence="2"/>
 
 
 
