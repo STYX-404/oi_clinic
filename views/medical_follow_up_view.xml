@@ -6,12 +6,12 @@
 
         <record id="stu_mfu_form" model="ir.ui.view">
             <field name="name">stu.mfu.form</field>
-            <field name="model">medicalfollowup.data</field>
+            <field name="model">stmedicalfollowup.data</field>
             <field name="arch" type="xml">
                 <form string="Student Medical Follow Up">
                     <sheet>
                         <group>
-                            <field name="stu_ids"/>
+                            <field name="stu_id"/>
                         </group>
                         <group col="4" >
                             <field name="stu_diagnosis"/>
@@ -27,16 +27,16 @@
         </record>
 
 
-        #--------employee form--------------
+         #--------employee form--------------
 
         <record id="em_mfu_form" model="ir.ui.view">
             <field name="name">em.mfu.form</field>
-            <field name="model">medicalfollowup.data</field>
+            <field name="model">emmedicalfollowup.data</field>
             <field name="arch" type="xml">
                 <form string="Employee Medical follow up">
                     <sheet>
                        <group>
-                            <field name="em_ids"/>
+                            <field name="em_id"/>
                         </group>
                         <group col="4" >
                             <field name="em_diagnosis"/>
@@ -50,14 +50,16 @@
             </field>
         </record>
 
+
+
         #--------student tree--------------
 
         <record id="stu_mfu_tree" model="ir.ui.view">
             <field name="name">stu.mfu.tree</field>
-            <field name="model">medicalfollowup.data</field>
+            <field name="model">stmedicalfollowup.data</field>
             <field name="arch" type="xml">
                 <tree string="Student Tree">
-                    <field name="stu_ids"/>
+                    <field name="stu_id"/>
                     <field name="stu_diagnosis"/>
                     <field name="stu_date"/>
                     <field name="stu_doctor"/>
@@ -66,15 +68,14 @@
             </field>
         </record>
 
-
-        #--------employee tree--------------
+         #--------employee tree--------------
 
         <record id="em_mfu_tree" model="ir.ui.view">
             <field name="name">em.mfu.tree</field>
-            <field name="model">medicalfollowup.data</field>
+            <field name="model">emmedicalfollowup.data</field>
             <field name="arch" type="xml">
                 <tree string="Doctor Tree">
-                    <field name="em_ids"/>
+                    <field name="em_id"/>
                      <field name="em_diagnosis"/>
                     <field name="em_date"/>
                     <field name="em_doctor"/>
@@ -88,22 +89,17 @@
         <record id="stu_mfu_view_action" model="ir.actions.act_window">
             <field name="name">Student Medical Follow Up</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">medicalfollowup.data</field>
-            <field name="view_id" ref="stu_mfu_tree"/>
-            <field name="view_id" ref="stu_mfu_form"/>
-            <field name="view_mode">form,tree</field>
+            <field name="res_model">stmedicalfollowup.data</field>
+            <field name="view_mode">tree</field>
         </record>
-
 
         #-------- Employee action ----------
 
-        <record id="em_mfu_view_action" model="ir.actions.act_window">
+         <record id="em_mfu_view_action" model="ir.actions.act_window">
             <field name="name">Employee Medical Follow Up</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">medicalfollowup.data</field>
-            <field name="view_id" ref="em_mfu_tree"/>
-            <field name="view_id" ref="em_mfu_form"/>
-            <field name="view_mode">form,tree</field>
+            <field name="res_model">emmedicalfollowup.data</field>
+             <field name="view_mode">form</field>
         </record>
 
 
@@ -112,16 +108,15 @@
        <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
        <menuitem id="medical_follow_up_root" name="Medical Follow Up " parent="oi_clinic_root" sequence="4"/>
 
-
         #--------student action--------------
 
       <!-- This Menu Item must have a parent and an action -->
        <menuitem id="stu_mfu_categ" name="Student Medical Follow Up" parent="medical_follow_up_root" action="stu_mfu_view_action" sequence="1"/>
 
-
         #--------doctor menu item----------
       <!-- This Menu Item must have a parent and an action -->
        <menuitem id="em_mfu_categ" name="Employee Medical Follow Up" parent="medical_follow_up_root" action="em_mfu_view_action" sequence="2"/>
+
 
 
 
