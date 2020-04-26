@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <odoo>
+      <data>
+
+          #--------student form--------------
+          <record id="stu_dcu_form" model="ir.ui.view">
+              <field name="name">stu.dcu.form</field>
+              <field name="model">stdailycheckup.data</field>
+              <field name="arch" type="xml">
+                  <form string="Student Daily Check Up">
+                      <sheet>
+                          <group>
+                              <field name="stu_ids"/>
+                          </group>
+                          <group col="4">
+                              <field name="stu_diagnosis"/>
+                              <field name="stu_doctor"/>
+                              <field name="stu_nurse"/>
+                              <field name="stu_date"/>
+                          </group>
+                      </sheet>
+                  </form>
+              </field>
+          </record>
+
+          #--------student tree--------------
+          <record id="stu_dcu_tree" model="ir.ui.view">
+              <field name="name">stu.dcu.tree</field>
+              <field name="model">stdailycheckup.data</field>
+              <field name="arch" type="xml">
+                  <tree string="Student Daily Check up">
+                      <field name="stu_ids" widget="many2many_tags"/>
+                      <field name="stu_nurse"/>
+                      <field name="stu_doctor"/>
+                      <field name="stu_diagnosis"/>
+                      <field name="stu_date"/>
+                  </tree>
+              </field>
+          </record>
+
+          #--------student action--------------
+          <record id="stu_dcu_action" model="ir.actions.act_window">
+              <field name="name">Student daily check up</field>
+              <field name="type">ir.actions.act_window</field>
+              <field name="res_model">stdailycheckup.data</field>
+              <field name="view_mode">tree,form</field>
+          </record>
+
+          #--------student menu item----------
+          <!-- This Menu Item must have a parent and an action -->
+          <menuitem id="stu_dcu_categ" name="Student Daily Check Up" parent="daily_check_up_root" action="stu_dcu_action" sequence="1"/>
+
+
+
+          #--------employee form--------------
+          <record id="em_dcu_form" model="ir.ui.view">
+              <field name="name">em.dcu.form</field>
+              <field name="model">emdailycheckup.data</field>
+              <field name="arch" type="xml">
+                  <form string="Employee Daily Check Up">
+                      <sheet>
+                          <group>
+                              <field name="em_ids"/>
+                          </group>
+                          <group col="4">
+                              <field name="em_diagnosis"/>
+                              <field name="em_doctor"/>
+                              <field name="em_date"/>
+                          </group>
+                      </sheet>
+                  </form>
+              </field>
+          </record>
+
+          #--------employee tree--------------
+          <record id="em_dcu_tree" model="ir.ui.view">
+              <field name="name">em.dcu.tree</field>
+              <field name="model">emdailycheckup.data</field>
+              <field name="arch" type="xml">
+                  <tree string="Employee Daily Check up">
+                              <field name="em_ids" widget="many2many_tags"/>
+                              <field name="em_doctor"/>
+                              <field name="em_diagnosis"/>
+                              <field name="em_date"/>
+                  </tree>
+              </field>
+          </record>
+
+          #--------employee action--------------
+          <record id="em_dcu_action" model="ir.actions.act_window">
+              <field name="name">Employee daily check up</field>
+              <field name="type">ir.actions.act_window</field>
+              <field name="res_model">emdailycheckup.data</field>
+              <field name="view_mode">tree,form</field>
+          </record>
+
+          #--------employee menu item----------
+          <!-- This Menu Item must have a parent and an action -->
+          <menuitem id="em_dcu_categ" name="Employee Daily Check Up" parent="daily_check_up_root" action="em_dcu_action" sequence="2"/>
+
+
+
+      </data>
+   </odoo>

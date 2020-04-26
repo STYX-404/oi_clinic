@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+ <data>
+     <report
+        id="stu_dcu_report"
+        model="stdailycheckup.data"
+        report_type="qweb-pdf"
+        string="student Check Up Report"
+        name="oi_clinic.report4"
+        file="oi_clinic.report4"
+      />
+ </data>
+</odoo>

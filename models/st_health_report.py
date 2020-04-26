@@ -4,6 +4,7 @@ from odoo import api, fields, models
 
 class HealthReport(models.Model):
     _name = 'health.report'
+    _rec_name = 'accept_unaccept'
     _description = 'this model is for Result of student health report'
 
     st_ids = fields.Many2many(comodel_name="students.data", column1="st_name", string="Student", )
@@ -31,7 +32,7 @@ class HealthReport(models.Model):
     st_notes = fields.Text(string="Notes", required=False, )
 
 
-    accept_unaccept = fields.Selection(string="Acceptable or Not", selection=[('ac', 'Acceptable'), ('un', 'Unacceptable'), ], required=True, default='un',)
+    accept_unaccept = fields.Selection(string="Acceptable or Not", selection=[('Acceptable', 'Acceptable'), ('Unacceptable', 'Unacceptable'), ], required=True, default='Unacceptable',)
 
 
     lab_info = fields.Many2one(comodel_name="lab.reports", string="Laboratory",  )

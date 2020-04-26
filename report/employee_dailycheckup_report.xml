@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+ <data>
+     <report
+        id="em_dcu_report"
+        model="emdailycheckup.data"
+        report_type="qweb-pdf"
+        string="Employee Check Up Report"
+        name="oi_clinic.report5"
+        file="oi_clinic.report5"
+      />
+ </data>
+</odoo>

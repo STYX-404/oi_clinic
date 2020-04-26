@@ -39,11 +39,11 @@
                             <field name="accept_unaccept"/>
                             <field name="st_notes" placeholder="notes..."/>
                         </group>
-                         <group string="Laboratory Information" attrs="{ 'invisible': [('accept_unaccept', '=', 'un',) ]}">
-                            <field name="lab_info" attrs="{ 'invisible': [('accept_unaccept', '=', 'un',) ]}"/>
+                         <group string="Laboratory Information" attrs="{ 'invisible': [('accept_unaccept', '=', 'Unacceptable',) ]}">
+                            <field name="lab_info" attrs="{ 'invisible': [('accept_unaccept', '=', 'Unacceptable',) ]}"/>
 
                         </group>
-                        <group col="4" string="Result of blood testing" attrs="{ 'invisible': [('accept_unaccept', '=', 'un',) ]}">
+                        <group col="4" string="Result of blood testing" attrs="{ 'invisible': [('accept_unaccept', '=', 'Unacceptable',) ]}">
                             <field name="he_value"/>
                             <field name="he_normal_value"/>
                             <field name="cl_value"/>
@@ -77,7 +77,7 @@
             <field name="model">health.report</field>
             <field name="arch" type="xml">
                 <tree string="Blood Clinical Chemistry Report">
-                    <field name="st_ids"/>
+                    <field name="st_ids" widget="many2many_tags"/>
                     <field name="he_value"/>
                     <field name="cl_value"/>
                     <field name="pt_value"/>

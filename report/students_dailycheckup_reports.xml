@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+     <template id="report4">
+        <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.internal_layout">
+
+                        <h2 class="text-center" style="background:#c4c4c4; color:black">Student Check Up Report</h2>
+
+                            <table class="table table-bordered mt32">
+                            <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Student Name</th>
+                                <td style="background:#c4c4c4;"> <span t-field="doc.stu_ids"/> </td>
+                            </tr>
+
+                                <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Diagnosis</th>
+                                <td style="background:#c4c4c4;"><span t-field="doc.stu_diagnosis"/></td>
+                            </tr>
+
+                            <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Doctor</th>
+                              <td style="background:#c4c4c4;"><span t-field="doc.stu_doctor"/></td>
+                            </tr>
+
+                            <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Nurse</th>
+                              <td style="background:#c4c4c4;"><span t-field="doc.stu_nurse"/></td>
+                            </tr>
+
+                            <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Date and Time</th>
+                              <td style="background:#c4c4c4;"><span t-field="doc.stu_date"/></td>
+                            </tr>
+
+
+                            </table>
+
+                    </t>
+                </t>
+        </t>
+     </template>
+    </data>
+</odoo>

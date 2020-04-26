@@ -15,6 +15,8 @@ class Doctors(models.Model):
     doctors_code = fields.Char(string="code", required=False, )
 
 
+
+
     @api.model
     def create(self, values):
         values.update({"doctors_code": self.env["ir.sequence"].next_by_code("doctors_code_num")})

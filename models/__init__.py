@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import employees, students, docs_and_nurses, laboratory, medical_follow_up, st_health_report
+from . import employees, students, docs_and_nurses, laboratory, daily_check_up, st_health_report

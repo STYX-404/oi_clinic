@@ -7,32 +7,31 @@
                 <t t-foreach="docs" t-as="doc">
                     <t t-call="web.external_layout">
 
-                        <h2 style="background: white; color:red">Laboratory Information</h2>
+                        <h2 class="text-center" style="background:#c4c4c4; color:black">Laboratory Information</h2>
 
                             <table class="table table-bordered mt32">
                                 <thead>
-                                      <tr>
-                                         <th class="text-center" style="background:black; color: white"> <span t-field="doc.lab_name"/> </th>
-                                      </tr>
+                                      <th class="text-center" style="background:#6B79E0; color: white">Name</th>
+                                      <td class="text-center" style="background:#c4c4c4;"><span t-field="doc.lab_name"/></td>
                                  </thead>
                             </table>
 
 
                             <table class="table table-bordered mt32">
                                 <thead>
-                                       <tr>
-                                          <th class="text-center" style="background:black; color: white">Branch Address</th>
-                                          <th class="text-center" style="background:black; color: white">phone Number</th>
-                                           <th class="text-center" style="background:black; color: white">Another phone Number</th>
+                                       <tr class="text-center" style="background:#6B79E0; color: white">
+                                          <th>Branch Address</th>
+                                          <th>phone Number</th>
+                                          <th>Another phone Number</th>
                                        </tr>
                                 </thead>
                                 <tbody>
-                                       <tr class="text-center">
+                                       <tr class="text-center" style="background:#c4c4c4;">
                                            <td> <span t-field="doc.lab_branch"/> </td>
                                            <td> <span t-field="doc.lab_phone"/>  </td>
                                            <td> <span t-field="doc.second_phone"/> </td>
                                        </tr>
-                                       <tr class="text-center">
+                                       <tr class="text-center" style="background:#c4c4c4;">
                                            <td> <span t-field="doc.sec_branch"/> </td>
                                            <td> <span t-field="doc.sec_branch_num"/> </td>
                                            <td> <span t-field="doc.sec_phone_sec_branch"/>  </td>

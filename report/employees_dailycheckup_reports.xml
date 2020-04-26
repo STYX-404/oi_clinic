@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+     <template id="report5">
+        <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.internal_layout">
+
+                        <h2 class="text-center" style="background:#c4c4c4; color:black">Employee Check Up Report</h2>
+
+                            <table class="table table-bordered mt32">
+                            <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Employee Name</th>
+                                <td style="background:#c4c4c4;"> <span t-field="doc.em_ids"/> </td>
+                            </tr>
+
+                                <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Diagnosis</th>
+                                <td style="background:#c4c4c4;"><span t-field="doc.em_diagnosis"/></td>
+                            </tr>
+
+                            <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Doctor</th>
+                              <td style="background:#c4c4c4;"><span t-field="doc.em_doctor"/></td>
+                            </tr>
+
+
+                            <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Date and Time</th>
+                              <td style="background:#c4c4c4;"><span t-field="doc.em_date"/></td>
+                            </tr>
+
+
+                            <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Secretary-General</th>
+                              <td style="background:#c4c4c4;"> </td>
+                            </tr>
+
+                            </table>
+
+                    </t>
+                </t>
+        </t>
+     </template>
+    </data>
+</odoo>

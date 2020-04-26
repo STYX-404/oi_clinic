@@ -33,7 +33,7 @@
         'views/docs_and_nurses_views.xml',
         'sequences/docsAndNurses_code.xml',
         'views/laboratory_view.xml',
-        'views/medical_follow_up_view.xml',
+        'views/daily_check_up_view.xml',
         'views/st_health_report_view.xml',
         'report/st_health_report.xml',
         'report/health_report.xml',
@@ -42,6 +42,10 @@
         'report/stu_reports.xml',
         'report/lab_report.xml',
         'report/laboratory_report.xml',
+        'report/students_dailycheckup_reports.xml',
+        'report/student_dailycheckup_report.xml',
+        'report/employees_dailycheckup_reports.xml',
+        'report/employee_dailycheckup_report.xml',
 
     ],
     # only loaded in demonstration mode
