@@ -5,8 +5,6 @@ class Medicines(models.Model):
     _rec_name = 'med_name'
     _description = 'a model that contain medicines data and information'
 
-    
-
     med_name = fields.Char(string="Medicine name", required=True, )
     med_type = fields.Selection(string="Medicine type",
                                 selection=
@@ -28,15 +26,16 @@ class Medicines(models.Model):
                                      ('atpcs', 'Antiseptics'),
                                      ('or', 'Other')],
                                     required=True, )
+    med_category_description = fields.Text(string="description", required=False)
     med_stock = fields.Integer(string="In stock", required=True, )
     med_ex_date = fields.Date(string="Expiration date", required=True, )
-    med_code = fields.Char(string="Medicine code", required=True, )
-    med_notes = fields.Text(string="Medicine notes", required=False, )
+    med_code = fields.Char(string="Medicine code", required=False, readonly=True)
+    med_notes = fields.Text(string="Additional notes", required=False, )
 
 
     @api.model
     def create(self, values):
-        values.update({"e_code": self.env["ir.sequence"].next_by_code("medicines_code_num")})
+        values.update({"med_code": self.env["ir.sequence"].next_by_code("med_code_num")})
         return super(Medicines, self).create(values)
 
     @api.multi
