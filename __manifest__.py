@@ -35,6 +35,8 @@
         'views/laboratory_view.xml',
         'views/daily_check_up_view.xml',
         'views/health_report_view.xml',
+        'views/medicines_views.xml',
+        'sequences/med_code.xml',
         'report/st_health_report.xml',
         'report/health_report.xml',
         'sequences/laboratory_code.xml',
