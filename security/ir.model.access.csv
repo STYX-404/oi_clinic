@@ -5,8 +5,8 @@ access_doctors_data,doctors.data,model_doctors_data,,1,1,1,1
 access_lab_reports,lab.reports,model_lab_reports,,1,1,1,1
 access_emdailycheckup_data,emdailycheckup.data,model_emdailycheckup_data,,1,1,1,1
 access_stdailycheckup_data,stdailycheckup.data,model_stdailycheckup_data,,1,1,1,1
-access_health_report,health.report,model_health_report,,1,1,1,1
-
+access_sthealth_report,sthealth.report,model_sthealth_report,,1,1,1,1
+access_emhealth_report,emhealth.report,model_emhealth_report,,1,1,1,1
 
 
 

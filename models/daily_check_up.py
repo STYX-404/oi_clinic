@@ -13,7 +13,6 @@ class StudentsFollowUp(models.Model):
     stu_diagnosis = fields.Text(string="Diagnosis", required=True, )
     stu_date = fields.Datetime(string="Date", default=fields.Datetime.now(), readonly=True, )
 
-
 class EmployeeFollowUp(models.Model):
     _name = 'emdailycheckup.data'
     _rec_name = 'em_doctor'
@@ -23,3 +22,4 @@ class EmployeeFollowUp(models.Model):
     em_doctor = fields.Many2one(comodel_name="doctors.data", string="Doctor", required=True, domain=[('doctors_job','=','d')], )
     em_diagnosis = fields.Text(string="Diagnosis", required=True, )
     em_date = fields.Datetime(string="Date", default=fields.Datetime.now(), readonly=True, )
+

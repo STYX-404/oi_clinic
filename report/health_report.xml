@@ -4,7 +4,7 @@
  <data>
      <report
         id="sthealth_report"
-        model="health.report"
+        model="sthealth.report"
         report_type="qweb-pdf"
         string="Print Report"
         name="oi_clinic.report"

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         #--------student form--------------
+
+        <record id="sthealthreport_form" model="ir.ui.view">
+            <field name="name">sthealthreport.form</field>
+            <field name="model">sthealth.report</field>
+            <field name="arch" type="xml">
+                <form string="Student Health Report Form">
+                    <sheet>
+                        <group string="Student Information">
+                            <field name="st_ids"/>
+                        </group>
+                         <group col="4">
+                            <field name="st_height"/>
+                            <field name="st_weight"/>
+                            <field name="st_bmi"/>
+
+                        </group>
+                         <group string="Measure The Sight" col="4">
+                            <field name="right_eye"/>
+                            <field name="left_eye"/>
+                            <field name="glasses"/>
+
+                        </group>
+                         <group col="4" string="Chronic conditions">
+                            <field name="breast_diseases"/>
+                            <field name="blood_pressure" placeholder="Example: 120/70"/>
+                            <field name="birth_defect"/>
+                        </group>
+                         <group col="4">
+                            <field name="drugs"/>
+                            <field name="result" attrs="{'invisible': [('drugs', '!=', True) ]}" />
+                            <field name="type_drug" attrs="{ 'invisible': [('result', '!=', 'p',) ]}" />
+                        </group>
+                        <group >
+                            <field name="accept_unaccept"/>
+                            <field name="st_notes" placeholder="notes..."/>
+                        </group>
+                         <group string="Laboratory Information" attrs="{ 'invisible': [('accept_unaccept', '!=', 'Acceptable',) ]}">
+                            <field name="lab_info" attrs="{ 'invisible': [('accept_unaccept', '!=', 'Acceptable',) ]}"/>
+
+                        </group>
+                        <group col="4" string="Result of blood testing" attrs="{'invisible':[('accept_unaccept', '!=', 'Acceptable')]}">
+                            <field name="he_value"/>
+                            <field name="he_normal_value"/>
+                            <field name="cl_value"/>
+                            <field name="cl_normal_value"/>
+                            <field name="pt_value"/>
+                            <field name="pt_normal_value"/>
+                            <field name="co_value"/>
+                            <field name="co_normal_value"/>
+                            <field name="inr_value"/>
+                            <field name="inr_normal_value"/>
+                            <field name="rbs_value"/>
+                            <field name="rbs_normal_value"/>
+                            <field name="sc_value"/>
+                            <field name="sc_normal_value"/>
+                            <field name="ur_value"/>
+                            <field name="ur_normal_value"/>
+                            <field name="sg_value"/>
+                            <field name="sg_normal_value"/>
+                            <field name="sgp_value"/>
+                            <field name="sgp_normal_value"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         #-----------student tree--------
+
+        <record id="sthealthreport_tree" model="ir.ui.view">
+            <field name="name">sthealthreport.tree</field>
+            <field name="model">sthealth.report</field>
+            <field name="arch" type="xml">
+                <tree string="Blood Clinical Chemistry Report">
+                    <field name="st_ids" widget="many2many_tags"/>
+                    <field name="he_value"/>
+                    <field name="cl_value"/>
+                    <field name="pt_value"/>
+                    <field name="co_value"/>
+                    <field name="inr_value"/>
+                    <field name="rbs_value"/>
+                    <field name="sc_value"/>
+                    <field name="ur_value"/>
+                    <field name="sg_value"/>
+                    <field name="sgp_value"/>
+                </tree>
+            </field>
+        </record>
+
+        #--------action--------------
+
+        <record id="sthealthreport_view_action" model="ir.actions.act_window">
+            <field name="name">Student Health Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sthealth.report</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        #--------menu item----------
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="sthealth_report_categ" name="Student Health Report" parent="health_reports_root" action="sthealthreport_view_action" sequence="1"/>
+
+
+
+
+
+        #--------employee form--------------
+
+        <record id="emhealthreport_form" model="ir.ui.view">
+            <field name="name">emhealthreport.form</field>
+            <field name="model">emhealth.report</field>
+            <field name="arch" type="xml">
+                <form string="Employee Health Report Form">
+                    <sheet>
+                        <group string="Employee Information">
+                            <field name="em_ids"/>
+                        </group>
+                         <group col="4">
+                            <field name="em_height"/>
+                            <field name="em_weight"/>
+                            <field name="em_bmi"/>
+
+                        </group>
+                         <group string="Measure The Sight" col="4">
+                            <field name="em_right_eye"/>
+                            <field name="em_left_eye"/>
+                            <field name="em_glasses"/>
+
+                        </group>
+                         <group col="4" string="Chronic conditions">
+                            <field name="em_breast_diseases"/>
+                            <field name="em_blood_pressure" placeholder="Example: 120/70"/>
+                            <field name="em_birth_defect"/>
+                        </group>
+                        <group >
+                            <field name="em_notes" placeholder="notes..."/>
+                        </group>
+                         <group string="Laboratory Information">
+                            <field name="em_lab_info"/>
+
+                        </group>
+                        <group col="4" string="Result of blood testing">
+                            <field name="em_he_value"/>
+                            <field name="em_he_normal_value"/>
+                            <field name="em_cl_value"/>
+                            <field name="em_cl_normal_value"/>
+                            <field name="em_pt_value"/>
+                            <field name="em_pt_normal_value"/>
+                            <field name="em_co_value"/>
+                            <field name="em_co_normal_value"/>
+                            <field name="em_inr_value"/>
+                            <field name="em_inr_normal_value"/>
+                            <field name="em_rbs_value"/>
+                            <field name="em_rbs_normal_value"/>
+                            <field name="em_sc_value"/>
+                            <field name="em_sc_normal_value"/>
+                            <field name="em_ur_value"/>
+                            <field name="em_ur_normal_value"/>
+                            <field name="em_sg_value"/>
+                            <field name="em_sg_normal_value"/>
+                            <field name="em_sgp_value"/>
+                            <field name="em_sgp_normal_value"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         #-----------employee tree--------
+
+        <record id="emhealthreport_tree" model="ir.ui.view">
+            <field name="name">emhealthreport.tree</field>
+            <field name="model">emhealth.report</field>
+            <field name="arch" type="xml">
+                <tree string="Blood Clinical Chemistry Report">
+                    <field name="em_ids" widget="many2many_tags"/>
+                    <field name="em_he_value"/>
+                    <field name="em_cl_value"/>
+                </tree>
+            </field>
+        </record>
+
+        #--------action--------------
+
+        <record id="emhealthreport_view_action" model="ir.actions.act_window">
+            <field name="name">Employee Health Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">emhealth.report</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        #--------menu item----------
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="emhealth_report_categ" name="Employee Health Report" parent="health_reports_root" action="emhealthreport_view_action" sequence="2"/>
+
+
+
+
+    </data>
+
+</odoo>
