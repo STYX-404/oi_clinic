@@ -12,9 +12,11 @@
                           <group>
                               <field name="stu_ids"/>
                           </group>
-                          <group col="4">
+                          <group col="4" string="Check up information">
                               <field name="stu_diagnosis"/>
+                              <field name="med_ids" widget="many2many_tags"/>
                               <field name="stu_doctor"/>
+                              <field name="med_dose"/>
                               <field name="stu_nurse"/>
                               <field name="stu_date"/>
                           </group>
@@ -33,6 +35,8 @@
                       <field name="stu_nurse"/>
                       <field name="stu_doctor"/>
                       <field name="stu_diagnosis"/>
+                      <field name="med_ids" widget="many2many_tags"/>
+                      <field name="med_dose"/>
                       <field name="stu_date"/>
                   </tree>
               </field>
@@ -62,8 +66,10 @@
                           <group>
                               <field name="em_ids"/>
                           </group>
-                          <group col="4">
+                          <group col="4" string="Check up information">
                               <field name="em_diagnosis"/>
+                              <field name="med_ids" widget="many2many_tags"/>
+                              <field name="med_dose"/>
                               <field name="em_doctor"/>
                               <field name="em_date"/>
                           </group>
@@ -78,10 +84,12 @@
               <field name="model">emdailycheckup.data</field>
               <field name="arch" type="xml">
                   <tree string="Employee Daily Check up">
-                              <field name="em_ids" widget="many2many_tags"/>
-                              <field name="em_doctor"/>
-                              <field name="em_diagnosis"/>
-                              <field name="em_date"/>
+                      <field name="em_ids" widget="many2many_tags"/>
+                      <field name="em_doctor"/>
+                      <field name="em_diagnosis"/>
+                      <field name="med_ids" widget="many2many_tags"/>
+                      <field name="med_dose"/>
+                      <field name="em_date"/>
                   </tree>
               </field>
           </record>

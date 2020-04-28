@@ -15,11 +15,12 @@
                             </h1>
                         </div>
                        <group col="4" colspan="2" string="medicine information">
-                           <field class="text-success" name="med_category"/>
+                           <field name="med_category"/>
                            <field name="med_type"/>
                            <field name="med_category_description" attrs="{'invisible': [ ('med_category', '!=', 'or')]}"/>
-                           <field class="text-warning" name="med_stock"/>
+                           <field class="text-success" name="med_stock"/>
                            <field name="med_ex_date"/>
+                           <field class="text-warning" name="med_outgoing"/>
                            <field class="text-danger" name="med_code"/>
                        </group>
                        <group>
@@ -40,9 +41,10 @@
             <field name="arch" type="xml">
                 <tree string="medicines">
                     <field name="med_name"/>
-                    <field class="text-success" name="med_category"/>
+                    <field name="med_category"/>
                     <field name="med_type"/>
-                    <field name="med_stock" class="text-warning"/>
+                    <field name="med_stock" class="text-success"/>
+                    <field class="text-warning" name="med_outgoing"/>
                     <field name="med_ex_date"/>
                     <field class="text-danger" name="med_code"/>
                 </tree>

@@ -5,7 +5,7 @@ from odoo.odoo import tools
 
 class Students(models.Model):
     _name = 'students.data'
-    _rec_name = 'st_code'
+    _rec_name = 'st_name'
     _description = 'the Students model is used for adding new students and there information to the database.'
 
 
