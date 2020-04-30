@@ -3,12 +3,12 @@
 <odoo>
  <data>
      <report
-        id="sthealth_report"
-        model="sthealth.report"
+        id="emhealth_report"
+        model="emhealth.report"
         report_type="qweb-pdf"
         string="Print Report"
-        name="oi_clinic.report"
-        file="oi_clinic.report"
+        name="oi_clinic.report7"
+        file="oi_clinic.report7"
       />
  </data>
 </odoo>

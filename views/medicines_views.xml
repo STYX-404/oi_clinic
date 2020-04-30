@@ -67,7 +67,7 @@
         #--------menu item----------
 
         <!-- This Menu Item must have a parent and an action -->
-        <menuitem id="medicines_data_categ" name="Medicines" parent="oi_clinic_root" action="medicine_view_action" sequence="6"/>
+        <menuitem id="medicines_data_categ" name="Medicines" parent="oi_clinic_root" action="medicine_view_action" sequence="5"/>
 
 
 

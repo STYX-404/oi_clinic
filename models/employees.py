@@ -6,8 +6,6 @@ class Employees(models.Model):
     _name = 'employees.data'
     _rec_name = 'e_name'
     _description = 'this model is for employees and professors data'
-    #
-
 
     @api.model
     def _default_image(self):

@@ -1,96 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-    <data>
-     <template id="report">
-        <t t-call="web.html_container">
-                <t t-foreach="docs" t-as="doc">
-                    <t t-call="web.external_layout">
-
-                        <h2 style="background: white; color:red">Daly's Lab </h2>
-                        <h6 style="background: white; color:red">(For Medical lab . Investigation)</h6>
-
-                            <table class="table table-bordered mt32">
-                                <thead>
-                                      <tr>
-                                         <th class="text-center" style="background:black; color: white">Student Information</th>
-                                      </tr>
-                                 </thead>
-                                <tbody>
-                                       <tr class="text-center">
-                                           <td> <span t-field="doc.st_ids"/> </td>
-                                       </tr>
-                                </tbody>
-                            </table>
-
-
-                        <h2 class="text-center" style="background: black; color:white">Blood Clinical Chemistry Report</h2>
-
-                            <table class="table table-bordered mt32">
-                                <thead>
-                                       <tr>
-                                          <th class="text-center" style="background:black; color: white">Test Name</th>
-                                          <th class="text-center" style="background:black; color: white">Result</th>
-                                          <th class="text-center" style="background:black; color: white">Normal Value</th>
-                                       </tr>
-                                </thead>
-                                <tbody>
-                                       <tr class="text-center">
-                                           <td> Hemoglobin - Hb % </td>
-                                           <td> <span t-field="doc.he_value"/> </td>
-                                           <td> <span t-field="doc.he_normal_value"/> </td>
-                                       </tr>
-                                       <tr class="text-center">
-                                           <td> Control </td>
-                                           <td> <span t-field="doc.cl_value"/> </td>
-                                           <td> <span t-field="doc.cl_normal_value"/> </td>
-                                       </tr>
-                                       <tr class="text-center">
-                                           <td> Patient Time </td>
-                                           <td> <span t-field="doc.pt_value"/> </td>
-                                           <td> <span t-field="doc.pt_normal_value"/> </td>
-                                       </tr>
-                                       <tr class="text-center">
-                                           <td> Concentration </td>
-                                           <td> <span t-field="doc.co_value"/> </td>
-                                           <td> <span t-field="doc.co_normal_value"/> </td>
-                                       </tr>
-                                       <tr class="text-center">
-                                           <td> INR </td>
-                                           <td> <span t-field="doc.inr_value"/> </td>
-                                           <td> <span t-field="doc.inr_normal_value"/> </td>
-                                       </tr>
-                                       <tr class="text-center">
-                                           <td> Random Blood Sugar </td>
-                                           <td> <span t-field="doc.rbs_value"/> </td>
-                                           <td> <span t-field="doc.rbs_normal_value"/> </td>
-                                       </tr>
-                                       <tr class="text-center">
-                                           <td> S.Creatinine </td>
-                                           <td> <span t-field="doc.sc_value"/> </td>
-                                           <td> <span t-field="doc.sc_normal_value"/> </td>
-                                       </tr>
-                                       <tr class="text-center">
-                                           <td> Urea </td>
-                                           <td> <span t-field="doc.ur_value"/> </td>
-                                           <td> <span t-field="doc.ur_normal_value"/> </td>
-                                       </tr>
-                                       <tr class="text-center">
-                                           <td> S.GOT </td>
-                                           <td> <span t-field="doc.sg_value"/> </td>
-                                           <td> <span t-field="doc.sg_normal_value"/> </td>
-                                       </tr>
-                                       <tr class="text-center">
-                                           <td> S.GPT </td>
-                                           <td> <span t-field="doc.sgp_value"/> </td>
-                                           <td> <span t-field="doc.sgp_normal_value"/> </td>
-                                       </tr>
-                                </tbody>
-                            </table>
-
-                    </t>
-                </t>
-        </t>
-     </template>
-    </data>
+ <data>
+     <report
+        id="sthealth_report"
+        model="sthealth.report"
+        report_type="qweb-pdf"
+        string="Print Report"
+        name="oi_clinic.report"
+        file="oi_clinic.report"
+      />
+ </data>
 </odoo>

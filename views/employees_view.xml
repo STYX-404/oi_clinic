@@ -47,7 +47,7 @@
                                     <group string="Status">
                                         <field name="gender"/>
                                         <field name="marital"/>
-                                       <field name="children"/>
+                                       <field name="children" attrs="{ 'invisible': [('marital', '=', 'single',) ]}"/>
                                     </group>
                                     <group string="Birth">
                                         <field name="birthday"/>

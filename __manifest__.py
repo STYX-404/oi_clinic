@@ -37,8 +37,8 @@
         'views/health_report_view.xml',
         'views/medicines_views.xml',
         'sequences/med_code.xml',
+        'report/st_health_reports.xml',
         'report/st_health_report.xml',
-        'report/health_report.xml',
         'sequences/laboratory_code.xml',
         'report/students_report.xml',
         'report/stu_reports.xml',
@@ -48,6 +48,10 @@
         'report/student_dailycheckup_report.xml',
         'report/employees_dailycheckup_reports.xml',
         'report/employee_dailycheckup_report.xml',
+        'report/docandnur_reports.xml',
+        'report/doctorandnurse_report.xml',
+        'report/em_health_reports.xml',
+        'report/em_health_report.xml',
 
     ],
     # only loaded in demonstration mode

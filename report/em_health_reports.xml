@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+     <template id="report7">
+        <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                            <table class="table table-bordered mt32">
+
+                                      <tr>
+                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6">Employee Health Report</th>
+                                      </tr>
+
+                                      <tr>
+                                          <th class="text-center" style="background:#6B79E0; color: white">Name</th>
+                                          <td class="text-center" style="background:#c4c4c4;" colspan="5"><span t-field="doc.em_ids"/></td>
+                                      </tr>
+
+                                      <tr>
+                                          <th class="text-center" style="background:#6B79E0; color: white">Height</th>
+                                          <td class="text-center" style="background:#c4c4c4;"><span t-field="doc.em_height"/></td>
+                                          <th class="text-center" style="background:#6B79E0; color: white">Weight</th>
+                                          <td class="text-center" style="background:#c4c4c4;"><span t-field="doc.em_weight"/></td>
+                                          <th class="text-center" style="background:#6B79E0; color: white">BMI</th>
+                                          <td class="text-center" style="background:#c4c4c4;"><span t-field="doc.em_bmi"/></td>
+                                      </tr>
+
+                                      <tr>
+                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6">Measure The Sight</th>
+                                      </tr>
+                                      <tr>
+                                          <th class="text-center" style="background:#6B79E0; color: white">Right Eye</th>
+                                          <td class="text-center" style="background:#c4c4c4;"><span t-field="doc.em_right_eye"/>/6</td>
+                                          <th class="text-center" style="background:#6B79E0; color: white">Left Eye</th>
+                                          <td class="text-center" style="background:#c4c4c4;"><span t-field="doc.em_left_eye"/>/6</td>
+                                          <th class="text-center" style="background:#6B79E0; color: white">Has Glasses ?</th>
+                                          <td class="text-center" style="background:#c4c4c4;"><span t-field="doc.em_glasses"/></td>
+                                      </tr>
+                                      <tr>
+                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6">Chronic conditions</th>
+                                      </tr>
+                                      <tr>
+                                          <th class="text-center" style="background:#6B79E0; color: white">Breast Diseases</th>
+                                          <td class="text-center" style="background:#c4c4c4;"><span t-field="doc.em_breast_diseases"/></td>
+                                          <th class="text-center" style="background:#6B79E0; color: white">Blood Pressure</th>
+                                          <td class="text-center" style="background:#c4c4c4;"><span t-field="doc.em_blood_pressure"/></td>
+                                          <th class="text-center" style="background:#6B79E0; color: white">Birth Defect</th>
+                                          <td class="text-center" style="background:#c4c4c4;"><span t-field="doc.em_birth_defect"/></td>
+                                      </tr>
+
+                                       <tr>
+                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6"></th>
+                                      </tr>
+
+                                      <tr>
+                                          <th class="text-center" style="background:#6B79E0; color: white">Notes</th>
+                                          <td class="text-center" style="background:#c4c4c4;" colspan="5"><span t-field="doc.em_notes"/></td>
+                                      </tr>
+
+                                       <tr>
+                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6"></th>
+                                      </tr>
+
+                                       <tr>
+                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6">Result of blood testing</th>
+                                      </tr>
+
+                                       <tr class="text-center" style="background:#6B79E0; color: white">
+                                          <th colspan="2">Test Name</th>
+                                          <th colspan="2">Result</th>
+                                          <th colspan="2">Normal Value</th>
+                                       </tr>
+
+                                       <tr class="text-center" style="background:#c4c4c4;">
+                                           <td colspan="2"> Hemoglobin - Hb % </td>
+                                           <td colspan="2"> <span t-field="doc.em_he_value"/> </td>
+                                           <td colspan="2"> <span t-field="doc.em_he_normal_value"/> </td>
+                                       </tr>
+                                       <tr class="text-center" style="background:#c4c4c4;" >
+                                           <td colspan="2"> Control </td>
+                                           <td colspan="2"> <span t-field="doc.em_cl_value"/> </td>
+                                           <td colspan="2"> <span t-field="doc.em_cl_normal_value"/> </td>
+                                       </tr>
+                                       <tr class="text-center" style="background:#c4c4c4;" >
+                                           <td colspan="2"> Patient Time </td>
+                                           <td colspan="2"> <span t-field="doc.em_pt_value"/> </td>
+                                           <td colspan="2"> <span t-field="doc.em_pt_normal_value"/> </td>
+                                       </tr>
+                                       <tr class="text-center" style="background:#c4c4c4;">
+                                           <td colspan="2"> Concentration </td>
+                                           <td colspan="2"> <span t-field="doc.em_co_value"/> </td>
+                                           <td colspan="2"> <span t-field="doc.em_co_normal_value"/> </td>
+                                       </tr>
+                                       <tr class="text-center" style="background:#c4c4c4;">
+                                           <td colspan="2"> INR </td>
+                                           <td colspan="2"> <span t-field="doc.em_inr_value"/> </td>
+                                           <td colspan="2"> <span t-field="doc.em_inr_normal_value"/> </td>
+                                       </tr>
+                                       <tr class="text-center" style="background:#c4c4c4;">
+                                           <td colspan="2"> Random Blood Sugar </td>
+                                           <td colspan="2"> <span t-field="doc.em_rbs_value"/> </td>
+                                           <td colspan="2"> <span t-field="doc.em_rbs_normal_value"/> </td>
+                                       </tr>
+                                       <tr class="text-center" style="background:#c4c4c4;">
+                                           <td colspan="2"> S.Creatinine </td>
+                                           <td colspan="2"> <span t-field="doc.em_sc_value"/> </td>
+                                           <td colspan="2"> <span t-field="doc.em_sc_normal_value"/> </td>
+                                       </tr>
+                                       <tr class="text-center" style="background:#c4c4c4;">
+                                           <td colspan="2"> Urea </td>
+                                           <td colspan="2"> <span t-field="doc.em_ur_value"/> </td>
+                                           <td colspan="2"> <span t-field="doc.em_ur_normal_value"/> </td>
+                                       </tr>
+                                       <tr class="text-center" style="background:#c4c4c4;" >
+                                           <td colspan="2"> S.GOT </td>
+                                           <td colspan="2"> <span t-field="doc.em_sg_value"/> </td>
+                                           <td colspan="2"> <span t-field="doc.em_sg_normal_value"/> </td>
+                                       </tr>
+                                       <tr class="text-center" style="background:#c4c4c4;">
+                                           <td colspan="2"> S.GPT </td>
+                                           <td colspan="2"> <span t-field="doc.em_sgp_value"/> </td>
+                                           <td colspan="2"> <span t-field="doc.em_sgp_normal_value"/> </td>
+                                       </tr>
+                            </table>
+
+                    </t>
+                </t>
+        </t>
+     </template>
+    </data>
+</odoo>

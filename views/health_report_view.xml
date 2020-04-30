@@ -14,8 +14,8 @@
                             <field name="st_ids"/>
                         </group>
                          <group col="4">
-                            <field name="st_height"/>
-                            <field name="st_weight"/>
+                            <field name="st_height" placeholder="cm"/>
+                            <field name="st_weight" placeholder="kg"/>
                             <field name="st_bmi"/>
 
                         </group>
@@ -78,16 +78,10 @@
             <field name="arch" type="xml">
                 <tree string="Blood Clinical Chemistry Report">
                     <field name="st_ids" widget="many2many_tags"/>
-                    <field name="he_value"/>
-                    <field name="cl_value"/>
-                    <field name="pt_value"/>
-                    <field name="co_value"/>
-                    <field name="inr_value"/>
-                    <field name="rbs_value"/>
-                    <field name="sc_value"/>
-                    <field name="ur_value"/>
-                    <field name="sg_value"/>
-                    <field name="sgp_value"/>
+                    <field name="drugs"/>
+                    <field name="accept_unaccept"/>
+                    <field name="lab_info"/>
+                    <field name="st_notes"/>
                 </tree>
             </field>
         </record>
@@ -181,8 +175,8 @@
             <field name="arch" type="xml">
                 <tree string="Blood Clinical Chemistry Report">
                     <field name="em_ids" widget="many2many_tags"/>
-                    <field name="em_he_value"/>
-                    <field name="em_cl_value"/>
+                    <field name="em_lab_info"/>
+                    <field name="em_notes"/>
                 </tree>
             </field>
         </record>

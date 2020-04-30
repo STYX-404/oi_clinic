@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+ <data>
+     <report
+        id="em_dcu_report"
+        model="doctors.data"
+        report_type="qweb-pdf"
+        string="Doctor or Nurse Information Report"
+        name="oi_clinic.report6"
+        file="oi_clinic.report6"
+      />
+ </data>
+</odoo>

@@ -32,7 +32,7 @@ class sthealthReport(models.Model):
     st_notes = fields.Text(string="Notes", required=False, )
 
 
-    accept_unaccept = fields.Selection(string="Acceptable or Not", selection=[('Acceptable', 'Acceptable'), ('Unacceptable', 'Unacceptable'), ], required=True,)
+    accept_unaccept = fields.Selection(string="Acceptable or Not", selection=[('Acceptable', 'Acceptable'), ('Unacceptable', 'Unacceptable'), ('Not Yet', 'Not Yet'), ], required=True,)
 
 
     lab_info = fields.Many2one(comodel_name="lab.reports", string="Laboratory",  )
