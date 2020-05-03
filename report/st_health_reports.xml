@@ -6,11 +6,11 @@
         <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="doc">
                     <t t-call="web.external_layout">
-                            <table class="table table-bordered mt32">
 
-                                      <tr>
-                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6">Student Health Report</th>
-                                      </tr>
+
+                        <h2 class="text-center" style="background:#c4c4c4; color:black">Student Health Report</h2>
+
+                            <table class="table table-bordered mt32">
 
                                       <tr>
                                           <th class="text-center" style="background:#6B79E0; color: white">Name</th>
@@ -27,7 +27,7 @@
                                       </tr>
 
                                       <tr>
-                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6">Measure The Sight</th>
+                                          <th class="text-center" style="background:#c4c4c4; color:black" colspan="6">Measure The Sight</th>
                                       </tr>
                                       <tr>
                                           <th class="text-center" style="background:#6B79E0; color: white">Right Eye</th>
@@ -38,7 +38,7 @@
                                           <td class="text-center" style="background:#c4c4c4;"><span t-field="doc.glasses"/></td>
                                       </tr>
                                       <tr>
-                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6">Chronic conditions</th>
+                                          <th class="text-center" style="background:#c4c4c4; color:black" colspan="6">Chronic conditions</th>
                                       </tr>
                                       <tr>
                                           <th class="text-center" style="background:#6B79E0; color: white">Breast Diseases</th>
@@ -50,7 +50,7 @@
                                       </tr>
 
                                        <tr>
-                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6">Drugs</th>
+                                          <th class="text-center" style="background:#c4c4c4; color:black" colspan="6">Drugs</th>
                                       </tr>
                                       <tr>
                                           <th class="text-center" style="background:#6B79E0; color: white">Drug Analysis</th>
@@ -61,7 +61,7 @@
                                           <td class="text-center" style="background:#c4c4c4;"><span t-field="doc.type_drug"/></td>
                                       </tr>
                                        <tr>
-                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6"></th>
+                                          <th class="text-center" style="background:#c4c4c4; color:black" colspan="6"></th>
                                       </tr>
 
                                       <tr>
@@ -70,7 +70,7 @@
                                       </tr>
 
                                        <tr>
-                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6"></th>
+                                          <th class="text-center" style="background:#c4c4c4; color:black" colspan="6"></th>
                                       </tr>
 
                                       <tr>
@@ -79,7 +79,7 @@
                                       </tr>
 
                                        <tr>
-                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6">Result of blood testing</th>
+                                          <th class="text-center" style="background:#c4c4c4; color:black" colspan="6">Result of blood testing</th>
                                       </tr>
 
                                        <tr class="text-center" style="background:#6B79E0; color: white">

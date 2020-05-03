@@ -90,8 +90,7 @@ class emhealthReport(models.Model):
     _name = 'emhealth.report'
     _description = 'this model is for Result of employee health report'
 
-    em_ids = fields.Many2many(comodel_name="employees.data", string="Employee", )
-
+    em_ids = fields.Many2many(comodel_name="employees.data", string="Employee",)
     em_height = fields.Float(string="Height",  required=True, )
     em_weight = fields.Float(string="Weight",  required=True, )
     em_bmi = fields.Float(string="BMI",  required=False, compute="emgen_bmi", )

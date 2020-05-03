@@ -6,11 +6,12 @@
         <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="doc">
                     <t t-call="web.external_layout">
+
+                        <h2 class="text-center" style="background:#c4c4c4; color:black">Employee Health Report</h2>
+
+
                             <table class="table table-bordered mt32">
 
-                                      <tr>
-                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6">Employee Health Report</th>
-                                      </tr>
 
                                       <tr>
                                           <th class="text-center" style="background:#6B79E0; color: white">Name</th>
@@ -27,7 +28,7 @@
                                       </tr>
 
                                       <tr>
-                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6">Measure The Sight</th>
+                                          <th class="text-center" style="background:#c4c4c4; color:black" colspan="6">Measure The Sight</th>
                                       </tr>
                                       <tr>
                                           <th class="text-center" style="background:#6B79E0; color: white">Right Eye</th>
@@ -38,7 +39,7 @@
                                           <td class="text-center" style="background:#c4c4c4;"><span t-field="doc.em_glasses"/></td>
                                       </tr>
                                       <tr>
-                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6">Chronic conditions</th>
+                                          <th class="text-center" style="background:#c4c4c4; color:black" colspan="6">Chronic conditions</th>
                                       </tr>
                                       <tr>
                                           <th class="text-center" style="background:#6B79E0; color: white">Breast Diseases</th>
@@ -49,21 +50,9 @@
                                           <td class="text-center" style="background:#c4c4c4;"><span t-field="doc.em_birth_defect"/></td>
                                       </tr>
 
-                                       <tr>
-                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6"></th>
-                                      </tr>
-
-                                      <tr>
-                                          <th class="text-center" style="background:#6B79E0; color: white">Notes</th>
-                                          <td class="text-center" style="background:#c4c4c4;" colspan="5"><span t-field="doc.em_notes"/></td>
-                                      </tr>
 
                                        <tr>
-                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6"></th>
-                                      </tr>
-
-                                       <tr>
-                                          <th class="text-center" style="background:#6B79E0; color: white" colspan="6">Result of blood testing</th>
+                                          <th class="text-center" style="background:#c4c4c4; color:black" colspan="6">Result of blood testing</th>
                                       </tr>
 
                                        <tr class="text-center" style="background:#6B79E0; color: white">
@@ -122,6 +111,16 @@
                                            <td colspan="2"> <span t-field="doc.em_sgp_value"/> </td>
                                            <td colspan="2"> <span t-field="doc.em_sgp_normal_value"/> </td>
                                        </tr>
+
+                                       <tr>
+                                          <th class="text-center" style="background:#c4c4c4; color:black" colspan="6"></th>
+                                      </tr>
+
+                                      <tr>
+                                          <th class="text-center" style="background:#6B79E0; color: white">Notes</th>
+                                          <td class="text-center" style="background:#c4c4c4;" colspan="5"><span t-field="doc.em_notes"/></td>
+                                      </tr>
+
                             </table>
 
                     </t>

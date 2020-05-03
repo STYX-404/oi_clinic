@@ -9,7 +9,7 @@
                 <form string="Doctors and nurses">
                     <sheet>
 
-                        <group col="2" colspan="2" string="doctors and nurses information">
+                        <group col="2" colspan="2" string="Doctors and Nurses Information">
                             <field name="doctors_image" widget="image" class="oe_avatar oe_left"/>
                             <field name="doctors_name"/>
                             <field name="doctors_job"/>
@@ -86,7 +86,7 @@
         #--------action--------------
 
         <record id="doctors_view_action" model="ir.actions.act_window">
-            <field name="name">doctors and nurses</field>
+            <field name="name">Doctors and Nurses</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">doctors.data</field>
             <field name="view_mode">kanban,tree,form</field>
