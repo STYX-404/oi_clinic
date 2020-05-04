@@ -52,6 +52,8 @@
         'report/doctorandnurse_report.xml',
         'report/em_health_reports.xml',
         'report/em_health_report.xml',
+        'report/employees_reports.xml',
+        'report/em_report.xml',
 
     ],
     # only loaded in demonstration mode

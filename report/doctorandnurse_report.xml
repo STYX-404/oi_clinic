@@ -3,7 +3,7 @@
 <odoo>
  <data>
      <report
-        id="em_dcu_report"
+        id="docandnur_report"
         model="doctors.data"
         report_type="qweb-pdf"
         string="Doctor or Nurse Information Report"

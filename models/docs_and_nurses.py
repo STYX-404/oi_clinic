@@ -7,12 +7,12 @@ class Doctors(models.Model):
     _description = 'this model is for employees and professors data'
 
     doctors_image = fields.Binary(string="Add image",)
-    doctors_job = fields.Selection(string="job", selection=[('d', 'Doctor'),
+    doctors_job = fields.Selection(string="Job", selection=[('d', 'Doctor'),
                                                                   ('n', 'Nurse')], required=True, )
 
     doctors_name = fields.Char(string="Name", required=True, )
     doctors_phone = fields.Char(string="Phone number", required=False, )
-    doctors_code = fields.Char(string="code", required=False, )
+    doctors_code = fields.Char(string="Code", required=False, )
 
 
 

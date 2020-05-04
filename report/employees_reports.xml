@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+     <template id="report8">
+        <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+
+                         <h2 style="color:black"><span t-field="doc.e_name"/></h2>
+                         <pre>
+<span t-field="doc.e_job"/>
+                        </pre>
+                        <h5 class="text-center"><u>Work Information</u></h5>
+                        <pre>
+Phone Number: <span t-field="doc.e_phone"/>
+E-mail: <span t-field="doc.e_email"/>
+Password: <span t-field="doc.e_password"/>
+Code: <span t-field="doc.e_code"/>
+<u>Other Information: </u>
+<span t-field="doc.e_notes"/>
+                        </pre>
+                        <br></br>
+                        <h5 class="text-center"><u>Private Information</u></h5>
+                        <pre>
+<u>Citizenship &amp; Other Information</u>
+Nationality (Country): <span t-field="doc.country_id"/>
+National Id No: <span t-field="doc.national_id"/>
+Passport No: <span t-field="doc.passport_id"/>
+Bank Account Number: <span t-field="doc.bank_account_id"/>
+                        </pre>
+                        <pre>
+<u>Contact Information</u>
+Emergency Contact: <span t-field="doc.emergency_contact"/>
+Emergency Phone: <span t-field="doc.emergency_phone"/>
+                        </pre>
+                        <pre>
+<u>Status</u>
+Gender: <span t-field="doc.gender"/>
+Marital Status: <span t-field="doc.marital"/>
+Number of Children: <span t-field="doc.children"/>
+                        </pre>
+                        <pre>
+<u>Birth</u>
+Date of Birth: <span t-field="doc.birthday"/>
+Place of Birth: <span t-field="doc.place_of_birth"/>
+Country of Birth: <span t-field="doc.country_of_birth"/>
+                        </pre>
+                        <pre>
+<u>Work Permit</u>
+Visa No: <span t-field="doc.visa_no"/>
+Work Permit No: <span t-field="doc.permit_no"/>
+Visa Expire Date: <span t-field="doc.visa_expire"/>
+                        </pre>
+                        <pre>
+<u>Education</u>
+Certificate Level: <span t-field="doc.certificate"/>
+Field of Study: <span t-field="doc.study_field"/>
+School: <span t-field="doc.study_school"/>
+                        </pre>
+                        <pre>
+<u>Additional Note:</u>
+<span t-field="doc.additional_note"/>
+                        </pre>
+
+                    </t>
+                </t>
+        </t>
+     </template>
+    </data>
+</odoo>
