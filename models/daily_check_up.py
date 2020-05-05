@@ -1,7 +1,6 @@
 
 from odoo import models, api, fields
 
-
 class StudentsFollowUp(models.Model):
     _name = 'stdailycheckup.data'
     _rec_name = 'stu_doctor'
@@ -13,7 +12,7 @@ class StudentsFollowUp(models.Model):
     stu_diagnosis = fields.Text(string="Diagnosis", required=True, )
     stu_date = fields.Datetime(string="Date", default=fields.Datetime.now(), readonly=True, )
     med_ids = fields.Many2many(comodel_name="medicines.data", string="medicine", required=True,)
-    med_dose = fields.Integer(string="Dose", required=True, default=1)
+    med_dose = fields.Integer(string="Dose", required=True, default=1, )
 
 
 class EmployeeFollowUp(models.Model):
@@ -24,7 +23,9 @@ class EmployeeFollowUp(models.Model):
     em_ids = fields.Many2many(comodel_name="employees.data", string="Employee", required=True )
     em_doctor = fields.Many2one(comodel_name="doctors.data", string="Doctor", required=True, domain=[('doctors_job','=','d')], )
     em_diagnosis = fields.Text(string="Diagnosis", required=True, )
-    em_date = fields.Datetime(string="Date", default=fields.Datetime.now(), readonly=True, )
-    med_ids = fields.Many2many(comodel_name="medicines.data", string="medicine", required=True,)
-    med_dose = fields.Integer(string="Dose", required=True, default=1)
+    em_date = fields.Datetime(string="Date", default=fields.Datetime.now(), readonly=True,)
+    med_ids = fields.Many2many(comodel_name="medicines.data", string="medicine", required=True, )
+    med_dose = fields.Integer(string="Dose", required=True, default=1, )
+
+
 

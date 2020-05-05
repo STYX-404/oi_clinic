@@ -8,7 +8,7 @@ class Doctors(models.Model):
 
     doctors_image = fields.Binary(string="Add image",)
     doctors_job = fields.Selection(string="Job", selection=[('d', 'Doctor'),
-                                                                  ('n', 'Nurse')], required=True, )
+                                                            ('n', 'Nurse')], required=True, )
 
     doctors_name = fields.Char(string="Name", required=True, )
     doctors_phone = fields.Char(string="Phone number", required=False, )
