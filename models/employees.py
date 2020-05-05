@@ -20,7 +20,7 @@ class Employees(models.Model):
     e_phone = fields.Char(string="Phone number", required=True, )
     e_email = fields.Char(string="E-mail", required=False, compute="gen_email")
     e_password = fields.Char(string="Password", required=True, compute="gen_password")
-    e_code = fields.Char(string="Employee code", required=False, )
+    e_code = fields.Char(string="Employee code", required=False, readonly=True)
     e_notes = fields.Text('Notes')
     passport_id = fields.Char('Passport No',)
     national_id = fields.Char(string='National Id No',)
@@ -29,8 +29,7 @@ class Employees(models.Model):
     visa_no = fields.Char('Visa No', )
     visa_expire = fields.Date('Visa Expire Date', )
     additional_note = fields.Text(string='Additional Note',)
-    country_id = fields.Many2one(
-        'res.country', 'Nationality (Country)',)
+    country_id = fields.Many2one('res.country', 'Nationality (Country)',)
     gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),

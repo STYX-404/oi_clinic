@@ -8,13 +8,17 @@
             <field name="arch" type="xml">
                 <form string="Doctors and nurses">
                     <sheet>
-
-                        <group col="2" colspan="2" string="Doctors and Nurses Information">
-                            <field name="doctors_image" widget="image" class="oe_avatar oe_left"/>
-                            <field name="doctors_name"/>
+                        <field name="doctors_image" widget='image' class="oe_avatar"/>
+                        <div class="oe_title">
+                            <label for="doctors_name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="doctors_name" placeholder="Doctor / Nurse Name" required="True"/>
+                            </h1>
+                        </div>
+                        <group col="4" colspan="2" string="Doctors and Nurses Information">
                             <field name="doctors_job"/>
                             <field name="doctors_phone"/>
-                            <field name="doctors_code"/>
+                            <field name="doctors_code" class="text-danger"/>
                         </group>
 
                     </sheet>
@@ -47,7 +51,7 @@
                     <field name="doctors_name"/>
                     <field name="doctors_job"/>
                     <field name="doctors_phone"/>
-                    <field name="doctors_code"/>
+                    <field name="doctors_code" class="text-danger"/>
                 </tree>
             </field>
         </record>

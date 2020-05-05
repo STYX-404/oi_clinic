@@ -27,5 +27,19 @@ class EmployeeFollowUp(models.Model):
     med_ids = fields.Many2many(comodel_name="medicines.data", string="medicine", required=True, )
     med_dose = fields.Integer(string="Dose", required=True, default=1, )
 
-
-
+    # @api.multi
+    # @api.depends('med_dose', 'med_ids', )
+    # @api.onchange('med_dose')
+    # def update_stock(self):
+    #
+    #     global emp_med_name, dose, stock, medicine_name
+    #     get_stock = self.env["medicines.data"].search([])
+    #     for record in self:
+    #         emp_med_name = record.med_ids.med_name
+    #         dose = record.med_dose
+    #         for item in get_stock:
+    #             stock = item.med_stock
+    #             medicine_name = item.med_name
+    #             if medicine_name == emp_med_name:
+    #                 print(medicine_name, stock, emp_med_name, dose )
+    #                 item.med_stock -= record.med_dose

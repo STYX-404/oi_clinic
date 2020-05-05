@@ -12,7 +12,7 @@ class Doctors(models.Model):
 
     doctors_name = fields.Char(string="Name", required=True, )
     doctors_phone = fields.Char(string="Phone number", required=False, )
-    doctors_code = fields.Char(string="Code", required=False, )
+    doctors_code = fields.Char(string="Code", required=False, readonly=True )
 
 
 
