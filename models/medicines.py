@@ -1,6 +1,4 @@
 from odoo import api, fields, models
-from .daily_check_up import StudentsFollowUp
-from .daily_check_up import EmployeeFollowUp
 class Medicines(models.Model):
     _name = 'medicines.data'
     _rec_name = 'med_name'
@@ -34,6 +32,15 @@ class Medicines(models.Model):
     med_code = fields.Char(string="Medicine code", required=False, readonly=True)
     med_notes = fields.Text(string="Additional notes", required=False, )
 
+    @api.model
+    def create(self, values):
+        values.update({"med_code": self.env["ir.sequence"].next_by_code("med_code_num")})
+        return super(Medicines, self).create(values)
+
+    @api.multi
+    def write(self, values):
+        return super(Medicines, self).write(values)
+
     @api.multi
     @api.depends('med_name', 'med_outgoing',)
     def get_doses(self):
@@ -55,4 +62,5 @@ class Medicines(models.Model):
                 stu_med_name = item.med_ids.med_name
                 if medicine_name == stu_med_name:
                     record.med_outgoing += dose
+
 
