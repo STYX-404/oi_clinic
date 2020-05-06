@@ -28,7 +28,6 @@ class Medicines(models.Model):
     med_category_description = fields.Text(string="description", required=False)
     med_stock = fields.Integer(string="Stock", required=False, compute="update_stock", readonly=False)
     med_outgoing = fields.Integer(string="Outgoing", required=False, compute="get_doses" )
-    med_ex_date = fields.Date(string="Expiration date", required=True, )
     med_code = fields.Char(string="Medicine code", required=False, readonly=True)
     med_notes = fields.Text(string="Additional notes", required=False, )
     med_stock2 = fields.Integer(string="stock2", required=False,)
