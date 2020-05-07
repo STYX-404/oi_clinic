@@ -21,6 +21,16 @@
                             </tr>
 
                             <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Medicine</th>
+                                <td style="background:#c4c4c4;"><span t-field="doc.med_ids"/></td>
+                            </tr>
+
+                            <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Dose</th>
+                                <td style="background:#c4c4c4;"><span t-field="doc.med_dose"/></td>
+                            </tr>
+
+                            <tr>
                               <th class="text-center" style="background:#6B79E0; color: white">Doctor</th>
                               <td style="background:#c4c4c4;"><span t-field="doc.em_doctor"/></td>
                             </tr>

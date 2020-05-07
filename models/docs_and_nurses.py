@@ -6,7 +6,7 @@ class Doctors(models.Model):
     _rec_name = 'doctors_name'
     _description = 'this model is for employees and professors data'
 
-    doctors_image = fields.Binary(string="Add image",)
+    doctors_image = fields.Binary(string="Photo",)
     doctors_job = fields.Selection(string="Job", selection=[('d', 'Doctor'),
                                                             ('n', 'Nurse')], required=True, )
 

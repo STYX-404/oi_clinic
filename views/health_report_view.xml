@@ -77,7 +77,7 @@
             <field name="model">sthealth.report</field>
             <field name="arch" type="xml">
                 <tree string="Blood Clinical Chemistry Report">
-                    <field name="st_ids" widget="many2many_tags"/>
+                    <field name="st_ids"/>
                     <field name="drugs"/>
                     <field name="accept_unaccept"/>
                     <field name="lab_info"/>
@@ -85,6 +85,20 @@
                 </tree>
             </field>
         </record>
+
+        #-----------student health report search--------
+
+        <record id="sthealthreport_search" model="ir.ui.view">
+           <field name="name">sthealthreport.search</field>
+           <field name="model">sthealth.report</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="st_ids"/>
+                    <field name="accept_unaccept"/>
+            </search>
+           </field>
+        </record>
+
 
         #--------action--------------
 
@@ -133,9 +147,7 @@
                             <field name="em_blood_pressure" placeholder="Example: 120/70"/>
                             <field name="em_birth_defect"/>
                         </group>
-                        <group >
-                            <field name="em_notes" placeholder="notes..."/>
-                        </group>
+
                          <group string="Laboratory Information">
                             <field name="em_lab_info"/>
 
@@ -162,6 +174,11 @@
                             <field name="em_sgp_value"/>
                             <field name="em_sgp_normal_value"/>
                         </group>
+
+                        <group >
+                            <field name="em_notes" placeholder="notes..."/>
+                        </group>
+
                     </sheet>
                 </form>
             </field>
@@ -174,12 +191,26 @@
             <field name="model">emhealth.report</field>
             <field name="arch" type="xml">
                 <tree string="Blood Clinical Chemistry Report">
-                    <field name="em_ids" widget="many2many_tags"/>
+                    <field name="em_ids"/>
                     <field name="em_lab_info"/>
                     <field name="em_notes"/>
                 </tree>
             </field>
         </record>
+
+
+        #-----------employee health report search--------
+
+        <record id="emhealthreport_search" model="ir.ui.view">
+           <field name="name">emhealthreport.search</field>
+           <field name="model">emhealth.report</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="em_ids"/>
+            </search>
+           </field>
+        </record>
+
 
         #--------action--------------
 

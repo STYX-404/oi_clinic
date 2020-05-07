@@ -85,7 +85,7 @@
                                        <tr class="text-center" style="background:#6B79E0; color: white">
                                           <th colspan="2">Test Name</th>
                                           <th colspan="2">Result</th>
-                                          <th colspan="2">Normal Value</th>
+                                          <th colspan="2">Standard Value</th>
                                        </tr>
 
                                        <tr class="text-center" style="background:#c4c4c4;">

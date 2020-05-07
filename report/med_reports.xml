@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+     <template id="report9">
+        <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.internal_layout">
+
+                        <h2 class="text-center" style="background:#c4c4c4; color:black">Medicine Report</h2>
+
+                            <table class="table table-bordered mt32">
+                            <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Medicine name</th>
+                                <td style="background:#c4c4c4;"> <span t-field="doc.med_name"/> </td>
+                            </tr>
+
+                            <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Medicine code</th>
+                              <td style="background:#c4c4c4;"><span t-field="doc.med_code"/></td>
+                            </tr>
+
+                            <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Medicine type</th>
+                                <td style="background:#c4c4c4;"><span t-field="doc.med_type"/></td>
+                            </tr>
+
+                            <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Medicine category</th>
+                                <td style="background:#c4c4c4;"><span t-field="doc.med_category"/> <span t-field="doc.med_category_description"/></td>
+                            </tr>
+
+
+                            <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Stock</th>
+                              <td style="background:#c4c4c4;"><span t-field="doc.med_stock"/></td>
+                            </tr>
+
+
+                            <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Outgoing</th>
+                              <td style="background:#c4c4c4;"><span t-field="doc.med_outgoing"/></td>
+                            </tr>
+
+                            <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Additional notes</th>
+                              <td style="background:#c4c4c4;"><span t-field="doc.med_notes"/></td>
+                            </tr>
+
+
+                            </table>
+
+                    </t>
+                </t>
+        </t>
+     </template>
+    </data>
+</odoo>

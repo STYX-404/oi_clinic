@@ -14,7 +14,7 @@ class Students(models.Model):
         image_path = get_module_resource('hr', 'static/src/img', 'default_image.png')
         return tools.image_resize_image_big(base64.b64encode(open(image_path, 'rb').read()))
 
-    st_name = fields.Char(string="name", required=True,)
+    st_name = fields.Char(string="Name", required=True,)
     st_code = fields.Char(string="Student code", required=False, readonly=True, )
     st_major = fields.Selection(string="Major", selection=[('cs', 'Computer science'),
                                                                    ('is', 'Information systems'),

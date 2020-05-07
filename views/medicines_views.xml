@@ -49,7 +49,19 @@
             </field>
         </record>
 
+        #-----------search--------
 
+        <record id="medicines_search" model="ir.ui.view">
+           <field name="name">medicines.search</field>
+           <field name="model">medicines.data</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="med_name"/>
+                    <field name="med_code"/>
+                    <field name="med_category"/>
+            </search>
+           </field>
+        </record>
 
 
 

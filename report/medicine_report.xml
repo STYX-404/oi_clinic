@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+ <data>
+     <report
+        id="medicine_report"
+        model="medicines.data"
+        report_type="qweb-pdf"
+        string="Medicine Report"
+        name="oi_clinic.report9"
+        file="oi_clinic.report9"
+      />
+ </data>
+</odoo>

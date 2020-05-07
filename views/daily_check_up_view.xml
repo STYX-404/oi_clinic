@@ -14,7 +14,7 @@
                           </group>
                           <group col="4" string="Check up information">
                               <field name="stu_diagnosis"/>
-                              <field name="med_ids" widget="many2many_tags"/>
+                              <field name="med_ids" />
                               <field name="stu_doctor"/>
                               <field name="med_dose"/>
                               <field name="stu_nurse"/>
@@ -31,16 +31,32 @@
               <field name="model">stdailycheckup.data</field>
               <field name="arch" type="xml">
                   <tree string="Student Daily Check up">
-                      <field name="stu_ids" widget="many2many_tags"/>
+                      <field name="stu_ids" />
                       <field name="stu_nurse"/>
                       <field name="stu_doctor"/>
                       <field name="stu_diagnosis"/>
-                      <field name="med_ids" widget="many2many_tags"/>
+                      <field name="med_ids"/>
                       <field name="med_dose"/>
                       <field name="stu_date"/>
                   </tree>
               </field>
           </record>
+
+
+          #-----------Student daily check up  search--------
+
+        <record id="stu_dailycheckup_search" model="ir.ui.view">
+           <field name="name">stu.dailycheckup.search</field>
+           <field name="model">stdailycheckup.data</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="stu_ids"/>
+                    <field name="stu_date"/>
+                    <field name="stu_diagnosis"/>
+            </search>
+           </field>
+        </record>
+
 
           #--------student action--------------
           <record id="stu_dcu_action" model="ir.actions.act_window">
@@ -68,7 +84,7 @@
                           </group>
                           <group col="4" string="Check up information">
                               <field name="em_diagnosis"/>
-                              <field name="med_ids" widget="many2many_tags"/>
+                              <field name="med_ids" />
                               <field name="med_dose"/>
                               <field name="em_doctor"/>
                               <field name="em_date"/>
@@ -84,15 +100,30 @@
               <field name="model">emdailycheckup.data</field>
               <field name="arch" type="xml">
                   <tree string="Employee Daily Check up">
-                      <field name="em_ids" widget="many2many_tags"/>
+                      <field name="em_ids" />
                       <field name="em_doctor"/>
                       <field name="em_diagnosis"/>
-                      <field name="med_ids" widget="many2many_tags"/>
+                      <field name="med_ids" />
                       <field name="med_dose"/>
                       <field name="em_date"/>
                   </tree>
               </field>
           </record>
+
+          #----------- Employee daily check up search--------
+
+        <record id="em_dailycheckup_search" model="ir.ui.view">
+           <field name="name">em.dailycheckup.search</field>
+           <field name="model">emdailycheckup.data</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="em_ids"/>
+                    <field name="em_date"/>
+                    <field name="em_diagnosis"/>
+            </search>
+           </field>
+        </record>
+
 
           #--------employee action--------------
           <record id="em_dcu_action" model="ir.actions.act_window">

@@ -4,7 +4,7 @@ from odoo.odoo.modules.module import get_module_resource
 from odoo.odoo import tools
 class Employees(models.Model):
     _name = 'employees.data'
-    _rec_name = 'e_name'
+    _rec_name = 'e_code'
     _description = 'this model is for employees and professors data'
 
     @api.model

@@ -7,7 +7,7 @@ class Laboratory(models.Model):
     _description = 'this model is for Result of Blood Testing'
 
 
-    lab_name = fields.Char(string="name", required=True, )
+    lab_name = fields.Char(string="Name", required=True, )
 
     lab_branch = fields.Text(string="Address", required=True, )
     lab_phone = fields.Char(string="Phone", required=True, )
@@ -18,7 +18,7 @@ class Laboratory(models.Model):
     sec_branch_num = fields.Char(string="Phone", required=False, )
     another_phone_sec_branch = fields.Boolean(string="Add another phone",  )
     sec_phone_sec_branch = fields.Char(string="Another phone", required=False, )
-    lab_image = fields.Binary(string="Add image", )
+    lab_image = fields.Binary(string="Photo", )
     lab_id = fields.Char(string="Laboratory Id", required=False, readonly=True, )
 
     @api.model

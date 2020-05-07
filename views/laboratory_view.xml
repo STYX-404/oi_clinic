@@ -93,6 +93,19 @@
             </field>
         </record>
 
+        #-----------search--------
+
+        <record id="laboratory_search" model="ir.ui.view">
+           <field name="name">laboratory.search</field>
+           <field name="model">lab.reports</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="lab_id"/>
+                    <field name="lab_name"/>
+            </search>
+           </field>
+        </record>
+
         #--------action--------------
 
         <record id="laboratory_view_action" model="ir.actions.act_window">

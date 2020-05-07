@@ -25,8 +25,8 @@ class Medicines(models.Model):
                                      ('atpcs', 'Antiseptics'),
                                      ('or', 'Other')],
                                     required=True, )
-    med_category_description = fields.Text(string="description", required=False)
-    med_stock = fields.Integer(string="Stock", required=False, compute="update_stock", readonly=False)
+    med_category_description = fields.Text(string="Description", required=False)
+    med_stock = fields.Integer(string="Stock", required=False, compute="update_stock", readonly=False, store=True)
     med_outgoing = fields.Integer(string="Outgoing", required=False, compute="get_doses" )
     med_code = fields.Char(string="Medicine code", required=False, readonly=True)
     med_notes = fields.Text(string="Additional notes", required=False, )
@@ -91,4 +91,5 @@ class Medicines(models.Model):
                 medicine_name = record.med_name
                 if medicine_name == stu_med_name:
                     record.med_stock = stock - dose
+
 
