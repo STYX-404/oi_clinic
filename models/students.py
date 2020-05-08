@@ -2,7 +2,7 @@ import base64
 from odoo import models, api, fields
 from odoo.odoo.modules.module import get_module_resource
 from odoo.odoo import tools
-
+from odoo.exceptions import UserError, ValidationError
 class Students(models.Model):
     _name = 'students.data'
     _rec_name = 'st_code'
@@ -26,7 +26,7 @@ class Students(models.Model):
                                                               ('4th', 'Fourth year')], required=True, )
     st_email = fields.Char(string="E-mail", required=False, compute="gen_email")
     st_password = fields.Char(string="Password", required=True, compute="gen_password")
-    st_phone = fields.Char(string="Phone number", required=True, )
+    st_phone = fields.Char(string="Phone number", required=True,)
     st_address = fields.Char(string="Address", required=True, )
 
     image = fields.Binary("Photo", default=_default_image, attachment=True,)
@@ -70,3 +70,37 @@ class Students(models.Model):
             id = record.st_code.__str__()
             phone_num = record.st_phone.__str__()
             record.st_password = name[0]+name[1] + id + phone_num[-2] + phone_num[-1]
+
+    # ------------------- Check phone Number ---------------------
+    @api.multi
+    @api.constrains('st_phone')
+    def _check_phone_number(self):
+
+        for rec in self:
+
+            phone = rec.st_phone.__str__()
+
+            if phone.__len__() != 11:
+
+                raise ValidationError("Invalid Phone Number")
+
+            else:
+                return False
+
+        # ------------------- Check Name ---------------------
+    @api.multi
+    @api.constrains('st_name')
+    def _check_name(self):
+
+        for rec in self:
+
+            name = rec.st_name.__str__().split(" ")
+
+            if name.__len__() >= 2:
+
+                return False
+
+            else:
+                raise ValidationError("Enter Full Name")
+
+

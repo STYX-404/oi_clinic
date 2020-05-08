@@ -1,4 +1,5 @@
 from odoo import models, api, fields
+from odoo.exceptions import UserError, ValidationError
 
 
 class Doctors(models.Model):
@@ -11,7 +12,7 @@ class Doctors(models.Model):
                                                             ('n', 'Nurse')], required=True, )
 
     doctors_name = fields.Char(string="Name", required=True, )
-    doctors_phone = fields.Char(string="Phone number", required=False, )
+    doctors_phone = fields.Char(string="Phone number", required=True, )
     doctors_code = fields.Char(string="Code", required=False, readonly=True )
 
 
@@ -25,4 +26,37 @@ class Doctors(models.Model):
     @api.multi
     def write(self, values):
         return super(Doctors, self).write(values)
+
+        # ------------------- Check phone Number ---------------------
+    @api.multi
+    @api.constrains('doctors_phone')
+    def _check_phone_number(self):
+
+        for rec in self:
+
+            phone = rec.doctors_phone.__str__()
+
+            if phone.__len__() != 11:
+
+                raise ValidationError("Invalid Phone Number")
+
+            else:
+                return False
+
+        # ------------------- Check Name ---------------------
+    @api.multi
+    @api.constrains('doctors_name')
+    def _check_name(self):
+
+        for rec in self:
+
+            name = rec.doctors_name.__str__().split(" ")
+
+            if name.__len__() >= 2:
+
+                return False
+
+            else:
+                raise ValidationError("Enter Full Name")
+
 
