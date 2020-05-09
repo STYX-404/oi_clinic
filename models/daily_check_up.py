@@ -1,7 +1,7 @@
 
 from odoo import models, api, fields
 
-class StudentsFollowUp(models.Model):
+class StudentsCheckUp(models.Model):
     _name = 'stdailycheckup.data'
     _rec_name = 'stu_ids'
     _description = 'This model is used for daily check-up for students'
@@ -15,7 +15,7 @@ class StudentsFollowUp(models.Model):
     med_dose = fields.Integer(string="Dose", required=True, default=1, )
 
 
-class EmployeeFollowUp(models.Model):
+class EmployeeCheckUp(models.Model):
     _name = 'emdailycheckup.data'
     _rec_name = 'em_ids'
     _description = 'This model is used for daily check-up for professors and employees'

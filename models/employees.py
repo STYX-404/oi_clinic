@@ -155,7 +155,7 @@ class Employees(models.Model):
                 return False
 
 
-    # ------------------- Check visa ex date ---------------------
+    # ------------------- Check age of employee ---------------------
 
     @api.multi
     @api.constrains('birthday')
@@ -168,7 +168,7 @@ class Employees(models.Model):
 
             if date_diff < 18:
 
-                raise ValidationError("Ineffective Employee")
+                raise ValidationError("The employee must be over 18 years old")
 
             else:
 
