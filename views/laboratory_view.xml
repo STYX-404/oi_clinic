@@ -119,7 +119,7 @@
         #--------menu item----------
 
         <!-- This Menu Item must have a parent and an action -->
-        <menuitem id="lab_reports_categ" name="Laboratory" parent="oi_clinic_root" action="laboratory_view_action" sequence="7"/>
+        <menuitem id="lab_reports_categ" name="Laboratories" parent="oi_clinic_root" action="laboratory_view_action" sequence="7"/>
 
 
     </data>
