@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "oi_clinic",
+    'name': "Obour clinic",
 
     'summary': """
         A health care system for the obour institutes clinic.""",
 
     'description': """
-        Long description of module's purpose
+       a system that helps in managing the students’ and employees’ health check-ups, health reports, medical records, and doctors’ and nurses’ data.
     """,
 
-    'author': "My Company",
+    'author': "obour students",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
