@@ -4,7 +4,7 @@
    <menuitem id="oi_clinic_root" name="OBOUR CLINIC" sequence="1"/>
 
     <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
-    <menuitem id="daily_check_up_root" name="Daily check up" sequence="4" parent="oi_clinic_root"/>
+    <menuitem id="daily_check_up_root" name="Daily check-ups" sequence="4" parent="oi_clinic_root"/>
 
      <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
     <menuitem id="health_reports_root" name="Health Reports" sequence="6" parent="oi_clinic_root"/>
