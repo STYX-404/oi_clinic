@@ -28,7 +28,7 @@ class Employees(models.Model):
     bank_account_id = fields.Char(string="Bank Account Number", required=False, )
     permit_no = fields.Char('Work Permit No', )
     visa_no = fields.Char('Visa No', )
-    visa_expire = fields.Date('Visa Expire Date', )
+    visa_expire = fields.Date('Visa Expire Date', default=fields.Date.today(), )
     additional_note = fields.Text(string='Additional Note',)
     country_id = fields.Many2one('res.country', 'Nationality (Country)',)
     gender = fields.Selection([

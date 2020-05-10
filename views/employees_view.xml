@@ -19,7 +19,7 @@
                         <notebook>
                         <page name="public" string="Work Information">
                                 <group>
-                                    <group string="Contact Information">
+                                    <group >
                                         <field name="e_job"/>
                                         <field name="e_phone" widget="phone"/>
                                         <field class="text-danger" name="e_code"/>

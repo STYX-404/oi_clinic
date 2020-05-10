@@ -6,7 +6,7 @@
         id="emhealth_report"
         model="emhealth.report"
         report_type="qweb-pdf"
-        string="Print Report"
+        string="Print Employee Health Report"
         name="oi_clinic.report7"
         file="oi_clinic.report7"
       />

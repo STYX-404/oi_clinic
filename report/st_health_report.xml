@@ -6,7 +6,7 @@
         id="sthealth_report"
         model="sthealth.report"
         report_type="qweb-pdf"
-        string="Print Report"
+        string="Print Student Health Report"
         name="oi_clinic.report"
         file="oi_clinic.report"
       />
