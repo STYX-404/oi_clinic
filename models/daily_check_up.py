@@ -10,9 +10,15 @@ class StudentsCheckUp(models.Model):
     stu_nurse = fields.Many2one(comodel_name="doctors.data", string="Nurse", required=True, domain=[('doctors_job','=','n')],)
     stu_doctor = fields.Many2one(comodel_name="doctors.data", string="Doctor", required=True, domain=[('doctors_job','=','d')],)
     stu_diagnosis = fields.Text(string="Diagnosis", required=True, )
-    stu_date = fields.Datetime(string="Date", default=fields.Datetime.now(), readonly=True, )
+    stu_date = fields.Datetime(string="Date", default=fields.Datetime.now(),)
     med_ids = fields.Many2one(comodel_name="medicines.data", string="Medicine", required=True, )
     med_dose = fields.Integer(string="Dose", required=True, default=1, )
+
+    @api.onchange('stu_diagnosis')
+    def update_date(self):
+        for rec in self:
+            if rec.stu_diagnosis:
+                rec.stu_date = fields.Datetime.now()
 
 
 class EmployeeCheckUp(models.Model):
@@ -23,9 +29,15 @@ class EmployeeCheckUp(models.Model):
     em_ids = fields.Many2one(comodel_name="employees.data", string="Employee", required=True )
     em_doctor = fields.Many2one(comodel_name="doctors.data", string="Doctor", required=True, domain=[('doctors_job','=','d')], )
     em_diagnosis = fields.Text(string="Diagnosis", required=True, )
-    em_date = fields.Datetime(string="Date", default=fields.Datetime.now(), readonly=True,)
+    em_date = fields.Datetime(string="Date", default=fields.Datetime.now(),)
     med_ids = fields.Many2one(comodel_name="medicines.data", string="Medicine", required=True, )
     med_dose = fields.Integer(string="Dose", required=True, default=1, )
+
+    @api.onchange('em_diagnosis')
+    def update_date(self):
+        for rec in self:
+            if rec.em_diagnosis:
+                rec.em_date = fields.Datetime.now()
 
     # @api.multi
     # @api.depends('med_dose', 'med_ids', )

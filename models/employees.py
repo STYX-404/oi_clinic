@@ -28,7 +28,7 @@ class Employees(models.Model):
     bank_account_id = fields.Char(string="Bank Account Number", required=False, )
     permit_no = fields.Char('Work Permit No', )
     visa_no = fields.Char('Visa No', )
-    visa_expire = fields.Date('Visa Expire Date', default=fields.Date.today(), )
+    visa_expire = fields.Date('Visa Expire Date', default=fields.Date.today(),)
     additional_note = fields.Text(string='Additional Note',)
     country_id = fields.Many2one('res.country', 'Nationality (Country)',)
     gender = fields.Selection([
@@ -47,7 +47,7 @@ class Employees(models.Model):
     children = fields.Integer(string='Number of Children', )
     place_of_birth = fields.Char('Place of Birth', )
     country_of_birth = fields.Many2one('res.country', string="Country of Birth", )
-    birthday = fields.Date('Date of Birth', required=True, )
+    birthday = fields.Date('Date of Birth', required=True, default=fields.Date.today(), )
     ssnid = fields.Char('SSN No', help='Social Security Number', )
     sinid = fields.Char('SIN No', help='Social Insurance Number', )
     study_field = fields.Char("Field of Study", placeholder='Computer Science',)
@@ -76,6 +76,12 @@ class Employees(models.Model):
     @api.multi
     def write(self, values):
         return super(Employees, self).write(values)
+
+    @api.onchange('e_name')
+    def update_date(self):
+        for rec in self:
+            if rec.e_name:
+                rec.visa_expire = fields.Date.today()
 
     # ------------------- generate email ---------------------
 

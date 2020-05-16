@@ -26,11 +26,12 @@ class Medicines(models.Model):
                                      ('or', 'Other')],
                                     required=True, )
     med_category_description = fields.Text(string="Description", required=False)
-    med_stock = fields.Integer(string="Stock", required=False, compute="update_stock", readonly=False, store=True)
+    med_stock = fields.Integer(string="Stock", required=False,)
     med_outgoing = fields.Integer(string="Outgoing", required=False, compute="get_doses" )
     med_code = fields.Char(string="Medicine code", required=False, readonly=True)
     med_notes = fields.Text(string="Additional notes", required=False, )
-    med_stock2 = fields.Integer(string="stock2", required=False,)
+    med_stock2 = fields.Integer(string="Stock", required=False, compute="update_stock",)
+    med_date = fields.Datetime(string="Stock Update Date", default=fields.Datetime.now(),)
 
     @api.model
     def create(self, values):
@@ -41,6 +42,11 @@ class Medicines(models.Model):
     def write(self, values):
         return super(Medicines, self).write(values)
 
+    @api.onchange('med_stock')
+    def update_date(self):
+        for rec in self:
+            if rec.med_stock:
+                rec.med_date = fields.Datetime.now()
 
 
     #---------------------------------------------------
@@ -55,41 +61,45 @@ class Medicines(models.Model):
         for record in self:
             medicine_name = record.med_name
             outgoing = record.med_outgoing
+            med_date = record.med_date.strftime("%m/%d/%Y, %H:%M:%S")
             for item in get_doses_emp:
                 dose = item.med_dose
                 emp_med_name = item.med_ids.med_name
-                if medicine_name == emp_med_name:
+                date = item.em_date.strftime("%m/%d/%Y, %H:%M:%S")
+                if date > med_date and medicine_name == emp_med_name:
                     record.med_outgoing += dose
             for item in get_doses_stu:
                 dose = item.med_dose
                 stu_med_name = item.med_ids.med_name
-                if medicine_name == stu_med_name:
+                date = item.stu_date.strftime("%m/%d/%Y, %H:%M:%S")
+                if date > med_date and medicine_name == stu_med_name:
                     record.med_outgoing += dose
 
     @api.multi
-    @api.depends('med_stock', )
+    @api.depends('med_stock' )
     # @api.onchange('med_outgoing')
     def update_stock(self):
-
         global emp_med_name, dose, stock, medicine_name
         get_doses_emp = self.env["emdailycheckup.data"].search([])
         get_doses_stu = self.env["stdailycheckup.data"].search([])
         for item in get_doses_emp:
             emp_med_name = item.med_ids.med_name
             dose = item.med_dose
+            date = item.em_date.strftime("%m/%d/%Y, %H:%M:%S")
             for record in self:
                 stock = record.med_stock
                 medicine_name = record.med_name
-                if medicine_name == emp_med_name:
-                    record.med_stock = stock - dose
+                med_date = record.med_date.strftime("%m/%d/%Y, %H:%M:%S")
+                if date > med_date and medicine_name == emp_med_name:
+                    record.med_stock2 = stock - dose
 
         for item in get_doses_stu:
             dose = item.med_dose
             stu_med_name = item.med_ids.med_name
+            date = item.stu_date.strftime("%m/%d/%Y, %H:%M:%S")
             for record in self:
                 stock = record.med_stock
                 medicine_name = record.med_name
-                if medicine_name == stu_med_name:
-                    record.med_stock = stock - dose
-
-
+                med_date = record.med_date.strftime("%m/%d/%Y, %H:%M:%S")
+                if date > med_date and medicine_name == stu_med_name:
+                    record.med_stock2 = stock - dose

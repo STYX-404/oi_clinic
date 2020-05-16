@@ -42,7 +42,7 @@
                     <field name="med_name"/>
                     <field name="med_category"/>
                     <field name="med_type"/>
-                    <field name="med_stock" class="text-success"/>
+                    <field name="med_stock2"/>
                     <field class="text-warning" name="med_outgoing"/>
                     <field class="text-danger" name="med_code"/>
                 </tree>

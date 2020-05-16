@@ -38,9 +38,23 @@
 
 
                             <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Available Stock</th>
+                              <td style="background:#c4c4c4;"><span t-field="doc.med_stock2"/></td>
+                            </tr>
+
+
+                            <tr>
                               <th class="text-center" style="background:#6B79E0; color: white">Outgoing</th>
                               <td style="background:#c4c4c4;"><span t-field="doc.med_outgoing"/></td>
                             </tr>
+
+
+                            <tr>
+                              <th class="text-center" style="background:#6B79E0; color: white">Stock Update Date</th>
+                              <td style="background:#c4c4c4;"><span t-field="doc.med_date"/></td>
+                            </tr>
+
+
 
                             <tr>
                               <th class="text-center" style="background:#6B79E0; color: white">Additional notes</th>
