@@ -5,7 +5,7 @@ from odoo.exceptions import UserError, ValidationError
 class Doctors(models.Model):
     _name = 'doctors.data'
     _rec_name = 'doctors_name'
-    _description = 'this model is for employees and professors data'
+    _description = 'this model is for Medical Persons data'
 
     doctors_image = fields.Binary(string="Photo",)
     doctors_job = fields.Selection(string="Job", selection=[('d', 'Doctor'),
@@ -52,7 +52,7 @@ class Doctors(models.Model):
 
             name = rec.doctors_name.__str__().split(" ")
 
-            if name.__len__() >= 2:
+            if name.__len__() >= 4:
 
                 return False
 

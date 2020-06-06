@@ -48,7 +48,6 @@ class Medicines(models.Model):
             if rec.med_stock:
                 rec.med_date = fields.Datetime.now()
 
-
     #---------------------------------------------------
 
     @api.multi

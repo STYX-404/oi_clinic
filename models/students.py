@@ -96,7 +96,7 @@ class Students(models.Model):
 
             name = rec.st_name.__str__().split(" ")
 
-            if name.__len__() >= 2:
+            if name.__len__() >= 4:
 
                 return False
 

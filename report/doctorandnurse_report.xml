@@ -6,7 +6,7 @@
         id="docandnur_report"
         model="doctors.data"
         report_type="qweb-pdf"
-        string="Doctor or Nurse Information Report"
+        string="Medical Person Information Report"
         name="oi_clinic.report6"
         file="oi_clinic.report6"
       />

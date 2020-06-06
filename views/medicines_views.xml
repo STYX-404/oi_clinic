@@ -21,6 +21,7 @@
                            <field class="text-success" name="med_stock"/>
                            <field class="text-warning" name="med_outgoing"/>
                            <field class="text-danger" name="med_code"/>
+                           <field name="med_date"/>
                        </group>
                        <group>
                             <field name="med_notes"/>

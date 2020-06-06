@@ -4,7 +4,7 @@ from odoo import api, fields, models
 class Laboratory(models.Model):
     _name = 'lab.reports'
     _rec_name = 'lab_name'
-    _description = 'this model is for Result of Blood Testing'
+    _description = 'this model is for Laboratories data'
 
 
     lab_name = fields.Char(string="Name", required=True, )

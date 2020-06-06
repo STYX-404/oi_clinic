@@ -112,7 +112,7 @@
             <field name="name">Laboratory</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">lab.reports</field>
-            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_mode">tree,kanban,form</field>
         </record>
 
 

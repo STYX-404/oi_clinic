@@ -76,7 +76,7 @@
             <field name="name">sthealthreport.tree</field>
             <field name="model">sthealth.report</field>
             <field name="arch" type="xml">
-                <tree string="Blood Clinical Chemistry Report">
+                <tree string="Student Health Report">
                     <field name="st_ids"/>
                     <field name="drugs"/>
                     <field name="accept_unaccept"/>
@@ -190,7 +190,7 @@
             <field name="name">emhealthreport.tree</field>
             <field name="model">emhealth.report</field>
             <field name="arch" type="xml">
-                <tree string="Blood Clinical Chemistry Report">
+                <tree string="Employee Health Report">
                     <field name="em_ids"/>
                     <field name="em_lab_info"/>
                     <field name="em_notes"/>

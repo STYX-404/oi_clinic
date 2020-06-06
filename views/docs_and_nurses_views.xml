@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+
         #--------form--------------
         <record id="doctors_form" model="ir.ui.view">
             <field name="name">doctors.form</field>
             <field name="model">doctors.data</field>
             <field name="arch" type="xml">
-                <form string="Doctors and nurses">
+                <form string="Medical Person">
                     <sheet>
                         <field name="doctors_image" widget='image' class="oe_avatar"/>
                         <div class="oe_title">
@@ -15,7 +16,7 @@
                                 <field name="doctors_name" placeholder="Doctor / Nurse Name" required="True"/>
                             </h1>
                         </div>
-                        <group col="4" colspan="2" string="Doctors and Nurses Information">
+                        <group col="4" colspan="2" string="Medical Person Information">
                             <field name="doctors_job"/>
                             <field name="doctors_phone"/>
                             <field name="doctors_code" class="text-danger"/>
@@ -47,7 +48,7 @@
             <field name="name">doctors.tree</field>
             <field name="model">doctors.data</field>
             <field name="arch" type="xml">
-                <tree string="docs and nurses">
+                <tree string="Medical Person">
                     <field name="doctors_name"/>
                     <field name="doctors_job"/>
                     <field name="doctors_phone"/>
@@ -90,15 +91,15 @@
         #--------action--------------
 
         <record id="doctors_view_action" model="ir.actions.act_window">
-            <field name="name">Doctors and Nurses</field>
+            <field name="name">Medical Persons</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">doctors.data</field>
-            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_mode">tree,kanban,form</field>
         </record>
 
         #--------menu item----------
 
-        <menuitem id="doctors_data_categ" name="Doctors and Nurses" parent="oi_clinic_root" action="doctors_view_action" sequence="3"/>
+        <menuitem id="doctors_data_categ" name="Medical Persons" parent="oi_clinic_root" action="doctors_view_action" sequence="3"/>
 
     </data>
 </odoo>
