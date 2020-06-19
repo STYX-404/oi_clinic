@@ -8,6 +8,9 @@ class sthealthReport(models.Model):
     _description = 'this model is for Result of student health report'
 
     st_ids = fields.Many2one(comodel_name="students.data", column1="st_name", string="Student", )
+    _sql_constraints = [
+        ('st_ids_unique', 'unique(st_ids)', ' This Student already has health report! ')
+    ]
 
     st_height = fields.Float(string="Height",  required=True, )
     st_weight = fields.Float(string="Weight",  required=True, )
@@ -92,6 +95,9 @@ class emhealthReport(models.Model):
     _description = 'this model is for Result of employee health report'
 
     em_ids = fields.Many2one(comodel_name="employees.data", string="Employee",)
+    _sql_constraints = [
+        ('em_ids_unique', 'unique(em_ids)', ' This Employee already has health report! ')
+    ]
     em_height = fields.Float(string="Height",  required=True, )
     em_weight = fields.Float(string="Weight",  required=True, )
     em_bmi = fields.Float(string="BMI",  required=False, compute="emgen_bmi", )

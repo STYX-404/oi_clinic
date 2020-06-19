@@ -27,6 +27,9 @@ class Students(models.Model):
     st_email = fields.Char(string="E-mail", required=False, compute="gen_email")
     st_password = fields.Char(string="Password", required=True, compute="gen_password")
     st_phone = fields.Char(string="Phone number", required=True,)
+    _sql_constraints = [
+        ('st_phone_unique', 'unique(st_phone)', ' Student already exists!')
+    ]
     st_address = fields.Char(string="Address", required=True, )
 
     image = fields.Binary("Photo", default=_default_image, attachment=True,)

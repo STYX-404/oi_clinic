@@ -5,6 +5,9 @@ class Medicines(models.Model):
     _description = 'a model that contain medicines data and information'
 
     med_name = fields.Char(string="Medicine name", required=True, )
+    _sql_constraints = [
+        ('med_name_unique', 'unique(med_name)', ' This medicine already exists!')
+    ]
     med_type = fields.Selection(string="Medicine type",
                                 selection=
                                 [('li', 'Liquid'),
@@ -63,16 +66,24 @@ class Medicines(models.Model):
             med_date = record.med_date.strftime("%m/%d/%Y, %H:%M:%S")
             for item in get_doses_emp:
                 dose = item.med_dose
+                dose_2 = item.med_dose_2
                 emp_med_name = item.med_ids.med_name
+                emp_med_name_2 = item.med_ids_2.med_name
                 date = item.em_date.strftime("%m/%d/%Y, %H:%M:%S")
                 if date > med_date and medicine_name == emp_med_name:
                     record.med_outgoing += dose
+                if date > med_date and medicine_name == emp_med_name_2:
+                    record.med_outgoing += dose_2
             for item in get_doses_stu:
                 dose = item.med_dose
+                dose_2 = item.med_dose_2
                 stu_med_name = item.med_ids.med_name
+                stu_med_name_2 = item.med_ids_2.med_name
                 date = item.stu_date.strftime("%m/%d/%Y, %H:%M:%S")
                 if date > med_date and medicine_name == stu_med_name:
                     record.med_outgoing += dose
+                if date > med_date and medicine_name == stu_med_name_2:
+                    record.med_outgoing += dose_2
 
     @api.multi
     @api.depends('med_stock' )
@@ -81,24 +92,35 @@ class Medicines(models.Model):
         global emp_med_name, dose, stock, medicine_name
         get_doses_emp = self.env["emdailycheckup.data"].search([])
         get_doses_stu = self.env["stdailycheckup.data"].search([])
-        for item in get_doses_emp:
-            emp_med_name = item.med_ids.med_name
-            dose = item.med_dose
-            date = item.em_date.strftime("%m/%d/%Y, %H:%M:%S")
-            for record in self:
-                stock = record.med_stock
-                medicine_name = record.med_name
-                med_date = record.med_date.strftime("%m/%d/%Y, %H:%M:%S")
+        for record in self:
+            medicine_name = record.med_name
+            stock = record.med_stock
+            med_date = record.med_date.strftime("%m/%d/%Y, %H:%M:%S")
+            for item in get_doses_emp:
+                emp_med_name = item.med_ids.med_name
+                emp_med_name_2 = item.med_ids_2.med_name
+                dose = item.med_dose
+                dose_2 = item.med_dose_2
+                date = item.em_date.strftime("%m/%d/%Y, %H:%M:%S")
                 if date > med_date and medicine_name == emp_med_name:
-                    record.med_stock2 = stock - dose
-
-        for item in get_doses_stu:
-            dose = item.med_dose
-            stu_med_name = item.med_ids.med_name
-            date = item.stu_date.strftime("%m/%d/%Y, %H:%M:%S")
-            for record in self:
-                stock = record.med_stock
-                medicine_name = record.med_name
-                med_date = record.med_date.strftime("%m/%d/%Y, %H:%M:%S")
+                    stock -= dose
+                    cal = stock
+                    record.med_stock2 = cal
+                if date > med_date and medicine_name == emp_med_name_2:
+                    stock -= dose_2
+                    cal = stock
+                    record.med_stock2 = cal
+            for item in get_doses_stu:
+                stu_med_name = item.med_ids.med_name
+                stu_med_name_2 = item.med_ids_2.med_name
+                dose = item.med_dose
+                dose_2 = item.med_dose_2
+                date = item.stu_date.strftime("%m/%d/%Y, %H:%M:%S")
                 if date > med_date and medicine_name == stu_med_name:
-                    record.med_stock2 = stock - dose
+                    stock -= dose
+                    cal = stock
+                    record.med_stock2 = cal
+                if date > med_date and medicine_name == stu_med_name_2:
+                    stock -= dose_2
+                    cal = stock
+                    record.med_stock2 = cal

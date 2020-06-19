@@ -13,6 +13,9 @@ class StudentsCheckUp(models.Model):
     stu_date = fields.Datetime(string="Date", default=fields.Datetime.now(),)
     med_ids = fields.Many2one(comodel_name="medicines.data", string="Medicine", required=True, )
     med_dose = fields.Integer(string="Dose", required=True, default=1, )
+    another_med = fields.Boolean(string="Take Another Medicine",  )
+    med_ids_2 = fields.Many2one(comodel_name="medicines.data", string="Medicine", required=False, )
+    med_dose_2 = fields.Integer(string="Dose", required=False, default=0, )
 
     @api.onchange('stu_diagnosis')
     def update_date(self):
@@ -32,6 +35,9 @@ class EmployeeCheckUp(models.Model):
     em_date = fields.Datetime(string="Date", default=fields.Datetime.now(),)
     med_ids = fields.Many2one(comodel_name="medicines.data", string="Medicine", required=True, )
     med_dose = fields.Integer(string="Dose", required=True, default=1, )
+    another_med = fields.Boolean(string="Take Another Medicine", )
+    med_ids_2 = fields.Many2one(comodel_name="medicines.data", string="Medicine", required=False, )
+    med_dose_2 = fields.Integer(string="Dose", required=False, default=0, )
 
     @api.onchange('em_diagnosis')
     def update_date(self):

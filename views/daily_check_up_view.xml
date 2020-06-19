@@ -17,6 +17,9 @@
                               <field name="med_ids" />
                               <field name="stu_doctor"/>
                               <field name="med_dose"/>
+                              <field name="another_med" />
+                              <field name="med_ids_2" attrs="{'invisible': [('another_med', '=', False)]}"/>
+                              <field name="med_dose_2" attrs="{'invisible': [('another_med', '=', False)]}"/>
                               <field name="stu_nurse"/>
                               <field name="stu_date"/>
                           </group>
@@ -86,6 +89,9 @@
                               <field name="em_diagnosis"/>
                               <field name="med_ids" />
                               <field name="med_dose"/>
+                              <field name="another_med" />
+                              <field name="med_ids_2" attrs="{'invisible': [('another_med', '=', False)]}"/>
+                              <field name="med_dose_2" attrs="{'invisible': [('another_med', '=', False)]}"/>
                               <field name="em_doctor"/>
                               <field name="em_date"/>
                           </group>

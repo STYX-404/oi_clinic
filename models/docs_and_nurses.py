@@ -13,6 +13,9 @@ class Doctors(models.Model):
 
     doctors_name = fields.Char(string="Name", required=True, )
     doctors_phone = fields.Char(string="Phone number", required=True, )
+    _sql_constraints = [
+        ('doctors_phone_unique', 'unique(doctors_phone)', ' Medical Person already exists!')
+    ]
     doctors_code = fields.Char(string="Code", required=False, readonly=True )
 
 

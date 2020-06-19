@@ -8,7 +8,9 @@ class Laboratory(models.Model):
 
 
     lab_name = fields.Char(string="Name", required=True, )
-
+    _sql_constraints = [
+        ('lab_name_unique', 'unique(lab_name)', ' Laboratory already exists!')
+    ]
     lab_branch = fields.Text(string="Address", required=True, )
     lab_phone = fields.Char(string="Phone", required=True, )
     another_phone = fields.Boolean(string="Add another phone", )

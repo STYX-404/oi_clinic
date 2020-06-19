@@ -19,6 +19,9 @@ class Employees(models.Model):
 
     e_name = fields.Char(string="Name", required=True, )
     e_phone = fields.Char(string="Phone number", required=True, )
+    _sql_constraints = [
+        ('e_phone_unique', 'unique(e_phone)', ' Employee already exists!')
+    ]
     e_email = fields.Char(string="E-mail", required=False, compute="gen_email")
     e_password = fields.Char(string="Password", required=True, compute="gen_password")
     e_code = fields.Char(string="Employee code", required=False, readonly=True)
