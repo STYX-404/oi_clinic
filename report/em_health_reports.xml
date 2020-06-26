@@ -14,7 +14,7 @@
 
 
                                       <tr>
-                                          <th class="text-center" style="background:#6B79E0; color: white">Name</th>
+                                          <th class="text-center" style="background:#6B79E0; color: white">Code</th>
                                           <td class="text-center" style="background:#c4c4c4;" colspan="5"><span t-field="doc.em_ids"/></td>
                                       </tr>
 

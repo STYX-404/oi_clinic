@@ -11,7 +11,7 @@
 
                             <table class="table table-bordered mt32">
                             <tr>
-                              <th class="text-center" style="background:#6B79E0; color: white">Employee Name</th>
+                              <th class="text-center" style="background:#6B79E0; color: white">Code</th>
                                 <td style="background:#c4c4c4;"> <span t-field="doc.em_ids"/> </td>
                             </tr>
 
@@ -21,27 +21,29 @@
                             </tr>
 
                             <tr>
-                              <th class="text-center" style="background:#6B79E0; color: white">Medicine</th>
-                                <td style="background:#c4c4c4;"><span t-field="doc.med_ids"/></td>
+                              <th class="text-center" style="background:#6B79E0; color: white">Date and Time</th>
+                              <td style="background:#c4c4c4;"><span t-field="doc.em_date"/></td>
                             </tr>
 
-                            <tr>
-                              <th class="text-center" style="background:#6B79E0; color: white">Dose</th>
-                                <td style="background:#c4c4c4;"><span t-field="doc.med_dose"/></td>
-                            </tr>
+                             <tr class="text-center" style="background:#6B79E0; color: white">
+                                <th>Medicine</th>
+                                <th>Dose</th>
+                             </tr>
+
+                              <tr class="text-center" style="background:#c4c4c4;">
+                                  <td> <span t-field="doc.med_ids"/> </td>
+                                  <td> <span t-field="doc.med_dose"/> </td>
+                              </tr>
+
+                              <tr class="text-center" style="background:#c4c4c4;">
+                                  <td> <span t-field="doc.med_ids_2"/> </td>
+                                  <td> <span t-field="doc.med_dose_2"/> </td>
+                              </tr>
 
                             <tr>
                               <th class="text-center" style="background:#6B79E0; color: white">Doctor</th>
                               <td style="background:#c4c4c4;"><span t-field="doc.em_doctor"/></td>
                             </tr>
-
-
-                            <tr>
-                              <th class="text-center" style="background:#6B79E0; color: white">Date and Time</th>
-                              <td style="background:#c4c4c4;"><span t-field="doc.em_date"/></td>
-                            </tr>
-
-
                             <tr>
                               <th class="text-center" style="background:#6B79E0; color: white">Secretary-General</th>
                               <td style="background:#c4c4c4;"> </td>

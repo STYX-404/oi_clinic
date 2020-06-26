@@ -38,7 +38,7 @@
 
 
                             <tr>
-                              <th class="text-center" style="background:#6B79E0; color: white">Available Stock</th>
+                              <th class="text-center" style="background:#6B79E0; color: white">Available in Stock</th>
                               <td style="background:#c4c4c4;"><span t-field="doc.med_stock2"/></td>
                             </tr>
 
